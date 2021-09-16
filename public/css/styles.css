@@ -1,0 +1,705 @@
+/* cuerpo del  html */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: system-ui;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0s all;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+
+
+/* PRUEBAS */
+
+/* cosas para usar */
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.centrado {
+    text-align :center;
+}
+.sombreado {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+/* header */
+.main-header {
+    background-color: #121212;
+    color: rgb(255, 255, 255);
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#jumpstore-header-flex {
+    display: flex;
+    padding: 5% 0;
+    position: relative;
+}
+#jumpstore-menu-mobile button, #jumpstore-cart button, #jumpstore-user button , #jumpstore-search-btn button, #jumpstore-admin button {
+    background-color: #121212;
+    border: none;
+    font-size: 6vw;
+    color: rgb(255, 255, 255);
+}
+
+#jumpstore-logo {
+    display: flex;
+    align-items: center;
+}
+#jumpstore-header-flex, #jumpstore-header-flex, #jumpstore-header-flex #jumpstore-search{
+    width: 100%;
+}
+#jumpstore-search {
+    display: flex;
+    align-items: center;
+}
+#jumpstore-box {
+    display: flex;
+    width: 100%;
+}
+#jumpstore-search .fulltext-search-box {
+    width: 100%;
+    height: 4vw;
+    border-radius: 0px;
+    color: #999999;
+    font-size: 13px;
+    letter-spacing: 0.01em;
+    padding-left: 10px;
+    background: rgb(255, 255, 255);
+    border: black;
+    outline: none;
+}
+#jumpstore-search  button.btn-buscar {
+    position: relative;
+    right: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 0px;
+    width: 45px;
+    height: 4vw;
+    outline: none;
+}
+#jumpstore-user {
+    position: relative;
+} 
+#jumpstore-user .dropdown-padding {
+    position: absolute;
+    padding: 8px;
+    width: 100px;
+    left: -70px;
+}
+
+#jumpstore-user .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    z-index: 999;
+    left: -50px;
+    text-align: center;
+}
+#jumpstore-user:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 17px;
+}
+.dropdown-content a:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(243, 243, 243);
+}
+#jumpstore-menu-mobile, #jumpstore-right-menu {
+    width: 20%;
+    color: rgb(255, 255, 255);
+    transition: color 0.5s;
+}
+#jumpstore-menu-mobile i:hover, #jumpstore-right-menu i:hover{
+    color:rgb(212, 212, 212)
+}
+
+.jumpstore-search-mobile{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    overflow: hidden;
+    background-color: #121212;
+    transition: all .25s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+.jumpstore-search-mobile.open {
+    opacity: 1;
+    pointer-events: all;
+}
+#jumpstore-box-mobile {
+    width: 100%;
+    padding-left: 5%;
+}
+#jumpstore-box-mobile .form-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.form-search .fulltext-search-box {
+    width: 100%;
+    font-size: 4vw;
+}
+.form-search .btn-buscar, .form-search .fulltext-search-box, .closebtn {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.form-search .fulltext-search-box::placeholder {
+    color: rgb(204, 203, 203);
+}
+.closebtn {
+    font-size: 11vw;
+    margin-bottom: 1vw;
+    padding-right: 5%;
+}
+.form-search .btn-buscar {
+    font-size: 6vw;
+    margin-right: 5%;
+}
+
+
+
+
+ /* nav */
+
+
+#jumpstore-navbar {
+    background-color: #121212;
+    border-top: 1px solid;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+#jumpstore-navbar ul{
+    justify-content: center;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#jumpstore-navbar li {
+    background-color: #121212;
+    
+}
+#jumpstore-navbar a{
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color:  rgb(255, 255, 255);
+    display: flex;
+    text-transform: uppercase;
+}
+.selected {
+    color: rgb(175 175 175) !important;
+}
+#jumpstore-navbar a:hover {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+/* nav mobile */
+
+
+#opacity-mobile {
+    transition: opacity 0.5s;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 0px;
+    left: 0px;
+    top: 0px;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    opacity:  0;
+    
+}
+#opacity-mobile.show-opacity {
+    opacity: 1;
+    width: 100%;
+}
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 80%; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: -100%;
+  background-color: #f3f3f3;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: all .5s ease; /* 0.5 second transition effect to slide in the sidenav */
+  
+}
+.sidenav.open-menu {
+    left: 0;
+}
+
+.overlay-content {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+}
+.overlay-content ul {
+    list-style: none;
+}
+
+/* The navigation menu links */
+.overlay-content .links a {
+    padding: 7% 10%;
+    text-decoration: none;
+    font-size: 5vw;
+    display: block;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000 ;
+    border-left: 8px solid transparent
+}
+.overlay-content .links a:hover {
+    text-decoration-line: underline ;
+}
+.selected-mobile {
+    background: #e6e1e1;
+    color: #111111 !important;
+    border-left: #212020 8px solid !important;
+}
+
+
+/* Position and style the close button (top right corner) */
+.search-close {
+    display: flex;
+    height: 17.2vw;
+    width: 100%;
+    justify-content: flex-end;
+    background-color: #111;
+}
+.sidenav .closebtn-overlay {
+    font-size: 12vw;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    border: none;
+    color: rgb(255, 255, 255);
+    background: transparent;
+}
+.footer-modal {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.footer-modal .nav-user ul {
+    display: flex;
+    margin: 0;
+    padding: 2vw 0;
+    align-items: center;
+    list-style: none;
+    background-color: #212020;
+}
+.nav-user ul .icon-admin {
+    padding: 0 5%;
+}
+.nav-user ul i{
+    color: rgb(255, 255, 255);
+    font-size: 7vw;
+}
+.nav-user li.user-item {
+    margin: 2vw;
+    font-size: 4vw;
+}
+
+
+/* footer */
+
+
+
+.footer {
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.black-area, .black-area-mobile{
+    background-color: #121212;
+}
+.grey-area{
+    background-color: #353232;
+}
+.footer-col {
+    position: relative;
+}
+.footer-title {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.footer-col ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.panel li {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    margin: 8px 0px 8px 0px;
+    color: #bfbfbf;
+}
+.panel li a {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    margin: 8px 0px 8px 0px;
+    color: #bfbfbf;
+}
+.panel li a:hover  {
+    text-decoration: underline !important;
+}
+#footer-copyright ul {
+    padding: 10px 0;
+    display: flex;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    align-items: center;
+    margin: 0px;
+
+    list-style: none;
+}
+#footer-copyright ul, #footer-copyright ul a {
+    color: #999999;
+}
+#footer-copyright ul li {
+    margin: 5px 0px 5px 0px;
+}
+
+.footer-separator {
+    margin: 0px 5px 0px 5px !important;
+}
+/* footer  mobile*/ 
+.black-area-mobile .jumpstore-arrow {
+    transition: 0.4s;
+}
+.black-area-mobile .panel {
+    padding-left: 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+/* mediaqueries */
+
+.button-scroll {
+    display: inline-block;
+    background-color: #000000;
+    width: 12vw;
+    height: 12vw;
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 6vw;
+    right: 4vw;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    box-shadow: 0px 0px 4px 0px rgb(255, 255, 255);
+  }
+  .button-scroll i {
+    transform: rotateZ(180deg); 
+    font-size: 9vw;
+    line-height: 11vw;
+    color: #fff;
+  }
+  .button-scroll:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px 0px rgb(0, 0, 0);
+  }
+  .button-scroll:hover i {
+    color: #000000;
+  }
+  .button-scroll:active {
+    background-color: rgb(0, 0, 0);
+  }
+  .button-scroll.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+@media (max-width: 767px) {
+    .container {
+        width: 100% ! important;
+    }
+
+    .form-search input:-webkit-autofill,
+    .form-search input:-webkit-autofill:hover, 
+    .form-search input:-webkit-autofill:focus, 
+    .form-search  input:-webkit-autofill:active
+    {
+    -webkit-box-shadow: 0 0 0 30px #121212 inset !important;
+    box-shadow: 0 0 0 30px #121212 inset !important;
+    }
+    .form-search input:-webkit-autofill
+    {
+    -webkit-text-fill-color: rgb(255, 255, 255) !important;
+    }
+
+    /* header */
+    .main-header {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        z-index: 999;
+    }
+    #jumpstore-header-flex {
+        align-items: center;
+    }
+    #jumpstore-menu-mobile, #jumpstore-search-mobile, #jumpstore-right-menu {
+        display: flex;
+    }
+    #jumpstore-menu-mobile, #jumpstore-logo, #jumpstore-right-menu {
+        justify-content: center !important;
+        align-items: center;
+    }
+    
+    #jumpstore-search, #jumpstore-nav {
+        display: none !important;
+    }
+    #jumpstore-user, #jumpstore-cart,#jumpstore-admin  {
+        display: none;
+    }
+    #jumpstore-logo {
+        width: 70%;
+    }
+
+    /* nav */
+    #jumpstore-navbar {
+        display: none;
+    }
+
+    #jumpstore-search-btn button {
+        font-size: 5.5vw;
+    }
+
+
+    /* footer */
+   .footer {
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+    .footer-title {
+        padding: 0 11px;
+    }
+    .footer .jumpstore-arrow {
+        width: 100%;
+        color: rgb(255, 255, 255);
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent;
+        border: none;
+    }
+    .footer .jumpstore-arrow i {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .footer hr {
+        display: block;
+        border: 0;
+        height: 1px;
+        background: #313131;
+    }
+    #footer-copyright ul {
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-separator {
+        display: none;
+    }
+
+    .black-area {
+        display: none !important;
+    }
+}
+@media (min-width:600px) {
+    a, button, input[type="submit"], input[type="button"], .btn, a:before, a:after {
+    cursor: pointer;
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all;
+    }
+    .button-scroll {
+        width: 8vw;
+        height: 8vw;
+        bottom: 4vw;
+        right: 4vw;
+      }
+      .button-scroll i {
+        font-size: 6vw;
+        line-height: 7vw;
+      }
+}
+
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active
+    {
+    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    }
+    input:-webkit-autofill
+    {
+    -webkit-text-fill-color: rgb(0, 0, 0) !important;
+    }
+
+    /* header */
+    #jumpstore-header-flex #jumpstore-menu-mobile, #jumpstore-header-flex #jumpstore-logo, #jumpstore-header-flex #jumpstore-search, #jumpstore-header-flex #jumpstore-right.menu {
+        width: 100%;
+    }
+    #jumpstore-header-flex {
+        position: relative;
+        padding: 3% 0;
+    }
+    .jumpstore-search-mobile {
+        display: none;
+    }
+    #jumpstore-right-menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+    }
+    #jumpstore-search-btn {
+        display: none;
+    }
+    
+    #jumpstore-cart button, #jumpstore-user button, #jumpstore-admin button{
+        font-size: 30px;
+    }
+    #jumpstore-header-flex #jumpstore-logo {
+        width: 1200px;
+    }
+    #jumpstore-search .fulltext-search-box, #jumpstore-search button.btn-buscar  {
+        height: 30px;
+        color: rgb(0, 0, 0);
+
+    }
+    #jumpstore-search, #jumpstore-right-menu, #jumpstore-logo {
+        display: flex;
+    }
+    #jumpstore-search-mobile, #jumpstore-menu-mobile {
+        display: none;
+    }
+    #jumpstore-search{
+        margin: 0 5% 0 10%;
+    }
+    /* nav */
+    #jumpstore-navbar a{
+        padding: 10px 25px;
+    }
+    #jumpstore-navbar-mobile {
+        display: none !important;
+    }    
+    #opacity-mobile {
+        display: none !important;
+    }
+    /* footer */
+    .footer .jumpstore-arrow, .footer hr  { 
+        display: none;
+    }
+    .black-area-mobile {
+        display: none !important;
+    }
+    .button-scroll {
+        width: 4vw;
+        height: 4vw;
+        bottom: 3vw;
+        right: 3vw;
+      }
+      .button-scroll i {
+        font-size: 3vw;
+        line-height: 4vw;
+      }
+
+}
+
+@media (min-width: 992px){
+    .container {
+        width: 970px;
+    }
+    /* header */
+    
+    #jumpstore-search{
+        margin: 0 3% 0 21%;
+    }
+        /* nav */
+    #jumpstore-navbar a{
+        padding: 10px 45px;
+    }
+}
+@media (min-width: 1200px){
+    .container {
+        width: 1170px;
+    }
+    /* header */
+    .main-header .container {
+        padding: 0 20px;
+    }
+    #jumpstore-search{
+        margin: 0 5% 0 41%;
+    }
+         /* nav */
+    #jumpstore-navbar a{
+        padding: 20px 65px;
+    }
+}

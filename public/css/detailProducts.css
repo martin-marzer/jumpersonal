@@ -1,0 +1,239 @@
+/* el body chaval */
+
+.breadcrumbs {
+    padding: 10px 10px 10px 0;
+}
+.breadcrumbs-item {
+    display: inline-block;
+}
+.breadcrumbs-link {
+    color: rgb(43, 42, 42);
+}
+.breadcrumbs-item:not(:last-of-type)::after {
+    content: ">";
+    margin: 0 5px;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+.breadcrumbs-link:hover {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+#jumpstore-product {
+    margin-bottom: 100px;
+}
+/* images */
+/* Slideshow container */
+.splide__arrows i {
+    color: #ffffff;
+    font-size: 35px;
+    filter: drop-shadow(2px 4px 6px black);
+}
+.splide__arrow {
+    background-color: transparent !important;
+}
+.splide__arrow--prev {
+    left: 10px  !important;
+}
+.splide__arrow--next {
+    right:10px  !important;
+}
+.splide__arrow svg {
+    height: 1.8em !important;
+    width: 1.8em !important;
+}
+.splide__pagination__page {
+    background: #000 !important;
+    width: 10px !important;
+    height: 10px !important;
+}
+.splide__pagination__page.is-active {
+    background: #797979 !important;
+}
+#img-product img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#description-product h1 {
+    font-size: 25px;
+    margin: 30px 0 0 0;
+    text-transform: uppercase;
+}
+#description-product .product-price p {
+    font-weight: 500;
+}
+#description-product .product-price p, #description-product .product-cuotas p {
+    font-size: 22px;
+    margin: 30px 0;
+}
+#description-product .product-cuotas p {
+    text-decoration: underline;
+}
+.product-talle select {
+    outline: none;
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+.product-carrito {
+    padding: 5% 0;
+    display: flex;
+    align-items: center;
+}
+.field.login {
+    width: 80%;
+}
+.field.login button {
+    margin: 0 auto;
+    width: 100%;
+    height: 55px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s;
+}
+
+.field.login p {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+}
+.field.fav {
+    margin-left: 5%;
+}
+.field.fav button{
+    border-radius: 50%;
+}
+.field.fav  button i {
+    font-size: 20px;
+    padding: 5px 2px;
+}
+.field.login button:hover  {
+    background-color: #3f3f41;
+}
+.field.fav button:hover  {
+    color: #f32929;
+}
+.product-details {
+    position: relative;
+}
+.product-details .jumpstore-arrow {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    top: 18px;
+    right: 2px;    
+    border: none;
+    background-color: transparent;
+}
+.product-details .jumpstore-arrow:focus {
+    background-color: transparent;
+}
+.product-details .panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.product-details h3 {
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    margin: 0;
+}
+.product-details p {
+    text-align: justify;
+    line-height: 25px;
+}
+@media (max-width:767px){
+    #jumpstore-page {
+        width: 95%;
+        margin: 5% auto;
+    }
+    .breadcrumbs-link, .breadcrumbs-item:not(:last-of-type)::after {
+        font-size: 4vw;
+    }
+    .product-carrito {
+        justify-content: center;
+    }
+}
+
+@media (min-width:768px) {
+    #jumpstore-page {
+        margin: 2% auto;
+    }
+    #content-page {
+    display: flex;
+    }
+    #img-product {
+        width: 54%;
+    }
+    #img-product .mySlides img {
+        object-fit: cover;
+        transition: 0.5s;
+        height: 360px;
+    }
+    #description-product {
+        width: 40%;
+        margin: 0 0 0 10%;
+    }
+    #description-product h1 {
+        font-size: 30px;
+    }
+    .product-talle select {
+        cursor: pointer;
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    #description-product h1 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    #description-product .product-price p, #description-product .product-cuotas p {
+        font-size: 15px;
+        margin: 20px 0;
+    }
+    .product-talle select {
+        height: 30px;
+    }
+    .field.login button  {
+        height: 35px;
+    }
+    .field.login p {
+        margin: 0;
+    }
+    .product-talle select, .field.login button {
+        font-size: 13px;
+    }
+    .field.fav button i {
+        font-size: 15px;
+    }
+    .product-details .jumpstore-arrow {
+        top: 12px;
+    }
+    .product-details h3 {
+        padding-top:12px;
+        font-size: 16px;
+    }
+    
+}
+@media (min-width:992px) and (max-width:1199px) {
+    #description-product h1 {
+        font-size: 25px;
+        margin-top: 10px;
+    }
+}
+@media (min-width:992px) {
+    #img-product .mySlides img {
+        height: 400px
+    }
+}
+@media (min-width:1200px) {
+    #img-product .mySlides img {
+        height: 500px
+    }
+}
+
+

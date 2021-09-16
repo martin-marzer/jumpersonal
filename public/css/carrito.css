@@ -1,0 +1,255 @@
+/* General */
+.main-carrito{
+    margin-top: 40px ;
+    margin-bottom: 40px;
+}
+
+
+/* Header carrito */
+.titulo-carrito-header{
+    margin: 0;
+}
+.titulo-carrito-header{
+    font-weight: 500;
+}
+.carrito-header-titulo-producto{
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+}
+.producto-carrito-header{
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.seguir-comprando{
+    margin-left: 0 ;
+    color:#0070d2;
+    display: flex;
+    align-items: center;
+}
+
+.ayuda-contenedor{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Producto Carrito */
+
+
+.contenedor-producto{
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 65%;
+    display: flex;
+    padding: 10px;
+}
+
+.segundo-contenedor-producto{
+    margin: 8px 8px;
+    position: relative;
+}
+
+.basura-icon{
+    font-size: 20px;
+}
+
+.imagen-producto-carrito{
+    width: 30%;
+}
+.imagen-producto{
+    width: 100%;
+}
+.contenedor-partes{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+}
+.contenedor-texto-producto{
+    display: flex;
+    justify-content: space-between;
+}
+.nombre-item p{
+    margin: 0;
+    font-weight: bold;
+}
+
+.contenedor-informacion-producto{
+    display: flex;
+    justify-content: space-between;
+}
+
+.talle{
+    font-size: 14px;
+}
+.editar-producto{
+    font-size: 13px;
+    color:#0070d2;
+}
+.precio-cantidad-contenedor{
+    display: flex;
+    font-size: 14px;
+    padding-right: 20%;
+}
+
+.cantidad-precio-item{
+    margin-left: 10px;
+}
+.precio-zapas{
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.total-precio{
+    margin-bottom: 0;
+}
+
+.selector-cantidad{
+    height: 30px;
+    margin-top: 20%;
+    margin-left:12%;
+}
+.cantidad-selector p{
+    margin-bottom: 0;
+}
+
+/* Menu Derecha */
+.texto-codigo{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+} 
+
+#input-codigo2{
+    width: 100%;
+    padding: 10px;
+    border: 0.2px solid black;
+    border-radius: 3px;
+}
+.boton-input-codigo{
+    position: relative;
+    margin: 15px 0;
+}
+.boton-codigo,.boton-envio{
+    position: absolute;
+    top: 1%;
+    right: 0%;
+}
+.boton-codigo2{
+    height: 40px;
+    width: 130%;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    border: 1px solid black;
+    margin-left: -30%;
+}
+.texto-envio{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#input-envio2{
+    width: 100%;
+    padding: 10px;
+    border: 0.2px solid black;
+    border-radius: 3px;
+}
+
+.boton-comprar2{
+    width: 100%;
+    height: 38px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+/* recomendados */
+.titulo-zapatilla{
+    margin-bottom: 5px;
+}
+.recomendados{
+    margin-top: 20px;
+}
+.titulo-recomendados2{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.zapatillas-recomendadas{
+    display: flex;
+}
+.zapatilla{
+    margin-right: 65px;
+    width: 100%;
+}
+.zapatilla:last-of-type{
+    margin: 0;
+}
+
+.zapatilla img{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.precio-zapatilla{
+    font-weight: 500;
+    margin-top: 22px;
+    font-size: 20px;
+}
+
+
+
+
+
+@media (max-width: 767px){
+    .contenedor-producto{
+        margin-bottom: 20px;
+        width: 100% !important;
+    }
+    .zapatillas-recomendadas{
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .zapatilla{
+        margin: 0;
+    }
+    .imagen-producto{
+        height: 15vw;
+    }
+    .texto-codigo{
+        text-align: center;
+    }
+    .ayuda-contenedor{
+        margin-bottom: 20px;
+    }
+    .carrito-header-titulo-producto{
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 768px) {
+    .contenedor-principal{
+        display: flex;
+    }
+    .contenedor-producto{
+        height: 100%;
+    }
+    .contenedor-menu-derecha{
+        width: 30%;
+        margin: 0 0 0 5%;
+    }
+    .texto-codigo{
+        text-align: right;
+    }
+    .recomendados{
+        margin-top: 200px;
+    }
+}

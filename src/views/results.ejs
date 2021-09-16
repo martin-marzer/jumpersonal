@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Home</title>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<link rel="stylesheet" href="/css/resultsbootstrap.css">
+	<link rel="stylesheet" href="/css/results.css">
+</head>
+<body>
+    <%- include("./partials/header") %>
+    
+    <%- include("./partials/menuMobile") %>
+<main>
+    <div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Resultados de la búsqueda:  <%= searchUser %> </h2>
+                <h2 class="products-title">Productos:  <%=usersResults.length %> </h2>
+			</div>
+				<% for( let i = 0; i < usersResults.length; i++ ) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="/products/detail/<%=usersResults[i].id%>">
+								<figure class="product-box_image">
+									<img src="/images/zapatillas/<%=usersResults[i].image[0]%>" alt="imagen de producto">
+								</figure>
+								<article class="product-box_data">
+									<h2>$<%=toThousand(usersResults[i].price)%></h2>
+									<!-- <span><%#=(usersResults[i].discount)%>% OFF</span> -->
+									<p><%=(usersResults[i].name)%></p>
+								</article>
+							</a>
+						</section>
+					</div>
+				<% } %>
+
+
+			<div class="col-12">
+				<% if (usersResults == 0) { %>
+					<h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</main>
+<%- include("./partials/footer") %>
+<%- include("./partials/scripts") %>
+</body>
+</html>

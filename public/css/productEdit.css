@@ -1,0 +1,165 @@
+body {
+    background-color: #f6f6f6b8;
+    background-image: url(../images/administrador/sitio-web-oficial-de-nike.jpg);
+
+}
+
+
+.formulario-edit{
+    margin: 50px 25%;
+    padding: 20px 8%;
+    background-color: #FFFF;
+    border-radius: 2%;
+    box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+    background: #b7c6dfed;
+}
+
+.container_main div {
+    width: 100%;
+}
+.selects {
+    display: flex;
+    margin-bottom: 30px;
+}
+#select-talles, #select-marcas {
+    width: 90%;
+    height:45px;
+    background: whitesmoke;
+    border: none;
+    border-radius: 6px;
+}
+#select-marcas {
+    margin-left: 10%;
+}
+.container_main div label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.formulario-input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 30px;
+    border: 0.5px #0000007a solid;
+    background: whitesmoke;
+    border: none;
+    border-radius: 10px;
+}
+.marcas label input{
+    display: inline-block;
+}
+#add_edit_product{
+    padding: 7px;
+}
+.add_edit_product{
+    border: 1px solid #2e518b; 
+    padding: 10px;
+    background-color: black; 
+    color: #ffffff; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    font-family: 'Helvetica', sans-serif; 
+    border-radius: 50px; 
+    font-size: 15px;
+    transition:  0.3s;
+    cursor: pointer;
+     }
+.add_edit_product:hover{
+    background: rgba(0, 0, 0, 0.637);
+}
+.wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+.titulo{
+    text-align: center;
+    font-size: 2.3em;
+}
+.file-upload {
+    display: inline-flex;
+    align-items: baseline;
+    font-size: 15px;
+    margin: 10px;
+    height: 70px;
+  }
+  
+  .file-upload__input {
+    display: none;
+  }
+  
+  .file-upload__button {
+    -webkit-appearance: none;
+    background: #009879;
+    border: 2px solid #00745d;
+    border-radius: 4px;
+    outline: none;
+    padding: 0.5em 0.8em;
+    margin-right: 15px;
+    color: #ffffff;
+    font-size: 1em;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .file-upload__button:active {
+    background: #00745d;
+  }
+  
+  .file-upload__label {
+    max-width: 250px;
+    font-size: 0.95em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: "Quicksand", sans-serif;
+  }
+  textarea.descripcion{
+    margin: 0px 0px 30px;
+    line-height: 2;
+    max-width: 100%;
+    min-width: 100%;
+    height: 200px;
+    max-height: 400px;
+    background: whitesmoke;
+    border: none;
+    border-radius: 10px;
+}
+
+  
+@media (max-width: 767px){
+    .selects{
+        flex-wrap: wrap
+    }
+    #select-marcas{
+        margin-left: 0px;
+    }
+    #select-talles, #select-marcas{
+        height: 40px;
+        width: 100%;
+    }
+    .talles{
+        margin-bottom: 25px;
+    }
+    .formulario-edit{
+        margin: 0 auto;
+        width: 92%;
+        margin-top: 8%;
+        margin-bottom: 8%;
+    }
+    .file-upload{
+        font-size: 12px;
+        margin: 0;
+    }
+    .add_edit_product{
+        font-size: 12px;
+    }
+    textarea.descripcion{
+        height: 100px;
+    }
+    .container_main div label{
+        font-size: 17px;
+    }
+   
+}
+  

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Administracion de productos</title>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="/css/administratorToolsProducts.css">
+</head>
+
+<body>
+    <%- include("./partials/header") %>
+    
+    <%- include("./partials/menuMobile") %>
+
+    <div class="encabezado_content">
+       <div class="titulo">Productos de Jumpstore</div>
+       <div class="ubicacion_content">
+           <ul>
+               <li><a href="/administrator">Panel de administracion</a></li>
+               <li>></li>
+               <li>Productos</li>
+           </ul>
+       </div>
+    </div>
+
+
+
+
+    <div class="conteiner_general">
+        <div class="form_content">
+            <ul class="form_ul">
+            <li class="titulo_form">Listado de productos: <%= articulos.length %> </li>
+            <li>
+                <a href="/productCreate" class="add_edit_product">Nuevo</a>
+            </li>
+        </ul>
+        </div>
+    <div class="conteiner_general_list">
+        <table class="table-sortable" cellspacing="0" cellpadding="20">
+            <thead>
+              <tr>
+                <th>Editar/Borrar</th>
+                <th style="    display: flex;
+                align-items: center;
+                width: 100%; justify-content: center;">Orden de carga<i class="fas fa-arrows-alt-v"></i></th>
+                <th>Nombre<i class="fas fa-arrows-alt-v"></i></th>
+                <th>Imagen</th>
+                <th>Precio<i class="fas fa-arrows-alt-v"></i></th>
+              </tr>
+            </thead>
+            <tbody>
+                <% articulos.forEach(articulo => { %> 
+                <tr data-href="/sneakers/detail/<%= articulo.id %>">
+                    <td><li class="liEditar"><a href="/products/edit/<%= articulo.id %>" class="add_edit_product">Editar</a>
+                        <form method="POST" action="/products/delete/<%= articulo.id %>?_method=DELETE">
+                            <button type="submit" id="delete_product" class="add_edit_product">Borrar</button>
+                        </form>
+                        </li>
+                    </td>
+                    <td style="width: 10%;"><%= articulo.id %></td>
+                    <td><%= articulo.name %></td>
+                    <td>
+                        <img src="images/zapatillas/<%= articulo.image[0] %>">
+                    </td>
+                    <td><%= articulo.price %></td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+
+    </div>
+    </div>
+
+
+<%- include("./partials/footer") %>
+<%- include("./partials/scripts") %>
+<script src="/js/adminProducts.js"></script>
+</body>
+</html>

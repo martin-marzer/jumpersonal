@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Zapatilla <%= articuloId.name %> </title>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="/css/detailProducts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+</head>
+<body>
+    <%- include("./partials/header") %>
+    <%- include("./partials/menuMobile") %>
+    <main>
+
+        <div id="jumpstore-page" >
+
+            <div id="box-breadcrumbs">
+                <div class="container">
+                    <ul class="breadcrumbs">
+                        <li class="breadcrumbs-item">
+                            <a href="/" class="breadcrumbs-link">JUMPSTORE</a>
+                        </li>
+                        <li class="breadcrumbs-item ">
+                            <a href="/sneakers/OrderByReleaseDateDESC" class="breadcrumbs-link breadcrumbs-link-active last">Productos</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <section id="jumpstore-product">
+                <div class="container">
+                    <div id="content-page">
+                        <div id="img-product">
+                            <!-- Slideshow container -->
+                            <div id="image-slider" class="splide">
+                                <div class="splide__arrows">
+                                    <button class="splide__arrow splide__arrow--prev">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+                                    <button class="splide__arrow splide__arrow--next">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="splide__track ">
+                                    
+                                    <ul class="splide__list ">
+                                        <li class="splide__slide">
+                                            <img src="/images/zapatillas/<%= articuloId.image[0] %> ">
+                                        </li>
+                                        <li class="splide__slide">
+                                            <img src="/images/zapatillas/<%= articuloId.image[1] %> ">
+                                        </li>
+                                        <li class="splide__slide">
+                                            <img src="/images/zapatillas/<%= articuloId.image[2] %> ">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    
+                            
+                        </div>
+                        <div id="description-product">
+                    
+                            <div class="product-title">
+                                <h1><%= articuloId.name %></h1>
+                            </div>
+                            <div class="product-price">
+                                <p>$<%= toThousand(articuloId.price) %></p>
+                            </div>
+                            <div class="product-cuotas">
+                                <p>Ver cuotas</p>
+                            </div>
+                            <div class="product-talle">
+                                <section class="form-talle">
+                                    <select name="talle" id="talle">
+                                        <option value="" disabled selected>Selecciona un talle</option>
+                                        <option value="35-37">35-37</option>
+                                        <option value="38-40">38-40</option>
+                                        <option value="41-43">41-43</option>
+                                        <option value="44-45">44-45</option>                 
+                                    </select>
+                                </section>
+                            </div>
+                    
+                            <div class="product-carrito">
+                                <div class="field login">
+                                    <a href="/">
+                                        <button type="button">
+                                         <p>Agregar al Carrito</p>
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="field fav">
+                                    <a href="/">
+                                        <button type="button">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                    </a>
+                                </div>    
+                            </div>
+                    
+                            <div class="product-details">
+                                <h3>Descripción</h3>
+                                <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
+                                <div class="panel">
+                                    <p><%= articuloId.description %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+    <%- include("./partials/footer") %>
+    <%- include("./partials/scripts") %>
+      
+    <script src="/js/detailProducts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+</body>
+</html>

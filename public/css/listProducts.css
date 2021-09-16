@@ -1,0 +1,563 @@
+/* el body chaval */
+body {
+    background-color: #f6f6f6;
+}
+
+#jumpstore-page a {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+.select-results-flex {
+    display: flex;
+    top: 1vw;
+}
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-container{
+    position: relative;
+    outline: 1px solid #7e7e7e;
+}
+.product-container .link-detail {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.product {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.info-product {
+    height: 100%;
+}
+.img-container {
+    height: 75%;
+}
+.img-product {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+.sneaker-name {
+    text-transform: capitalize;
+}
+.price {
+    font-weight: 500;
+}
+
+/* filter menu mobile */ 
+
+.sidenav-filter {
+    height: 100%; /* 100% Full-height */
+    width: 100%; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: -100%;
+    background-color: #f3f3f3;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: all .5s ease; /* 0.5 second transition effect to slide in the sidenav */
+    
+  }
+  .sidenav-filter.open-filter {
+      right: 0;
+  }
+  .overlay-content-filter {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+}
+.search-close-filter {
+    display: flex;
+    height: 17.2vw;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #121212;
+}
+.sidenav-filter .closebtn-filter {
+    font-size: 10vw;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    border: none;
+    color: rgb(255, 255, 255);
+    background: transparent;
+}
+.sidenav-filter .title-filter {
+    align-self: center;
+    margin-left: 42%;
+    color: #ffffff;
+}
+
+.sidenav-filter .filter-body {
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.filter-body #form-mobile {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.filter-body .each-filter-mobile {
+    width: 50%;
+    text-align: center;
+}
+.filter-body .button {
+    margin-top: 5vw;
+    width: 100%;
+    text-align-last: center;
+}
+.filter-body .button button {
+    background: #121212;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 70%;
+    height: 8vw;
+    font-size: 3vw;
+    text-align: center;
+}
+.filter-body .categoria {
+    font-size: 7vw;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 2vw 0;
+}
+.filter-body .control-group {
+    margin-left: 5%;
+}
+.filter-body .control {
+    text-transform: uppercase;
+    font-size: 4vw;
+    padding: 2vw 0;
+}
+.filter-body .control input {
+    padding: 0;
+    margin: 3vw;
+}
+
+@media (max-width:599px) {
+    .products-container {
+        justify-content: space-between;
+    } 
+    .product-container {  
+        max-width: 48%;
+        margin-bottom: 10%;
+        background-color: #ffff;
+        width: 48%;
+    }
+    .sneaker-name {
+        font-size: 3.5vw;
+        height: 12vw;
+    }
+    .price {
+        font-size: 4vw;
+    }
+    .img-container {
+        height: 40vw;
+    }
+
+}
+@media (min-width:600px) {
+    .product-container {  
+        margin-right: 5px;
+        margin-left: 8px;
+        max-width: 31%;
+        margin-bottom: 6%;
+        background-color: #ffff;
+        width: 31%;
+    }
+    .sneaker-name {
+        font-size: 2.3vw;
+        height: 50px;
+    }
+    .price {
+        font-size: 3vw;
+    }
+    .select-results-flex {
+        top: 4vw;
+    }
+}
+@media (max-width:767px) {
+    .top-banner {
+        display: none;
+    }
+    body {
+        font-size: 3vw
+    }
+
+    .select-results-flex {
+        flex-direction: column;
+        position: -webkit-sticky;
+        position: sticky;
+        z-index: 99;
+        background-color: #f3f3f3;;
+        padding-bottom: 2vw;
+    }
+    .results-container {
+        order: -1;
+        text-align: center;
+        border-bottom: .5px solid #cacaca;
+        border-top: .5px solid #cacaca;
+        margin: 20px 0;
+    }
+    .select-filter-container {
+        height: 9vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    .select-container {
+        width: 48%;
+    }
+    .filter-container {
+        width: 48%;
+    }
+    select {
+        height: 100%;
+        width: 100%;
+        border-radius: 0.5vw;
+        background: rgb(255, 255, 255);
+        border: 1px solid rgb(0, 0, 0);
+    }
+    .btn {
+        height: 100%;
+        width: 100%;
+        border: none;
+        font-weight: 600;
+        background: #121212;
+        color: rgb(255, 255, 255);
+        border-radius: 0.5vw;
+    }
+    .products-container {
+        margin-top: 10%;
+    }
+    .product-container {
+        -webkit-box-shadow: 0px 0px 20px -5px #000000;
+        box-shadow: 0px 0px 15px -5px #000000;
+    }
+    .text {
+        margin-top: -12%;
+        padding: 0 4vw;
+    }
+    
+
+}
+@media (max-width:767px) and (min-width:600px) {
+    .img-container {
+        height: 30vw;
+    }
+}
+@media (min-width:768px) {
+    .top-banner {
+        text-align: center;
+        margin: 50px;
+    }
+    .products-container {
+        margin-top: 30px;
+    }
+    .product-container{
+        max-width: 23%;
+        margin-right: 7px;
+        margin-left: 7px;
+        margin-bottom: 5%;
+        height: 250px;
+        width: 100%;
+    }
+    .product-container:hover {
+        -webkit-box-shadow: 0px 0px 20px -5px #000000;
+        box-shadow: 0px 0px 20px -5px #000000;
+    }
+    .filter-container {
+        display: none;
+    }
+    .img-container{
+        height: 150px;
+    }
+    .text {
+        margin-top: -12%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .sneaker-name {
+        font-size: 13px;
+    }
+    .price {
+        font-size: 17px;
+    }
+
+}
+@media (max-width:991px) and (min-width:768px)  {
+    .select-results-flex {
+        border-bottom: 1px solid #cacaca;
+        padding: 30px 0px;
+        justify-content: space-between;
+    }
+    .select-filter-container {
+        display: flex;
+        width: 67%;
+        justify-content: space-between;
+    }
+    .select-container{
+        display: flex;
+        width: 205px;
+        align-items: center;
+    }
+    .select-container select {
+        height: 80%;
+        width: 100%;
+    }
+    .filter-container {
+        width: 205px;
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+    .btn {
+        height: 80%;
+        width: 100%;
+        border: none;
+        font-weight: 600;
+        background: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        border-radius: 0.5vw;
+    }
+    .sidenav-filter {
+        width: 80%; 
+    }
+    .search-close-filter {
+        height: 10.2vw;
+    }
+    .sidenav-filter .closebtn-filter {
+        font-size: 7vw;
+    }
+    .filter-body .categoria {
+        font-size: 4vw;
+    }
+    .filter-body .control {
+        font-size: 2.5vw;
+    }
+    .filter-body .control input {
+        margin: 3vw 2vw;
+        height: 20px;
+        width: 20px;
+    }
+    .filter-body .button button {
+        height: 6vw;
+    }
+}
+@media (max-width:991px) {
+    #filter-container-desktop, #filter-container-desktop .button {
+        display: none;
+    }
+}
+@media (min-width:992px) {
+    #jumpstore-page {
+        margin: 50px 0;
+    }
+    .select-filter-container{
+        display: flex;
+        width: 20%;
+        align-items: flex-end;
+    }
+    .select-container {
+        width: 100%;
+        height: 100%;
+    }
+    .select-container select {
+        width: 80%;
+        height: 100%;
+        cursor: pointer;
+    }
+    .results-container {
+        display: flex;
+        align-items: center;
+        width: 79%;
+        margin-left: 1%;
+        justify-content: center;
+        border-bottom: 1px solid #cacaca;
+        padding-bottom: 15px;
+    }
+    .results-container p {
+        margin: 0;
+    }
+    .products-filter {
+        display: flex;
+    }
+    #filter-container-desktop {
+        width: 20%;
+        margin-top: 30px;
+        height: 630px;
+        position: sticky;
+        top: 15px;
+    }
+    #filter-container-desktop .button {
+        height: 40px;
+    }
+    #filter-container-desktop .button.last button {
+        background-color: #7b7b7b;
+    }
+    #filter-container-desktop .button button {
+        background: #121212;
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        transition: all 0.2s;
+    }
+    #filter-container-desktop .button button:hover {
+        background: #2b2a2a;
+    }
+    .each-filter{
+        margin-bottom: 20px;
+        border-bottom: 1px solid #cacaca;
+    }   
+    .categoria {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-size: 25px;
+        text-transform: capitalize;
+    }
+    .filter-scroll {
+        height: 150px;
+        overflow-y: scroll;
+        padding: 10px 6px 15px 6px;
+        background: rgb(255, 255, 255);
+    }
+    .filter-scroll.last {
+        height: 120px;
+    }
+    .control-group.talle .control {
+        width: 49%;
+    }
+    .control-group.talle .control, .control-group.precio .control{
+       font-size: 16px 
+    }
+    .control {
+        display: block;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+        padding-top: 2px;
+        cursor: pointer;
+        font-size: 18px;
+        text-transform: capitalize;
+    }
+        .control input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+    .control_indicator {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background: #e6e6e6;
+        border: 0px solid #000000;
+        border-radius: 5px;
+    }
+    .control:hover input ~ .control_indicator,
+    .control input:focus ~ .control_indicator {
+        background: #cccccc;
+    }
+    
+    .control input:checked ~ .control_indicator {
+        background: #000000;
+    }
+    .control:hover input:not([disabled]):checked ~ .control_indicator,
+    .control input:checked:focus ~ .control_indicator {
+        background: #000000;
+    }
+    .control input:disabled ~ .control_indicator {
+        background: #e6e6e6;
+        opacity: 0.6;
+        pointer-events: none;
+    }
+    .control_indicator:after {
+        box-sizing: unset;
+        content: '';
+        position: absolute;
+        display: none;
+    }
+    .control input:checked ~ .control_indicator:after {
+        display: block;
+    }
+    .control-checkbox .control_indicator:after {
+        left: 8px;
+        top: 4px;
+        width: 3px;
+        height: 8px;
+        border: solid #ffffff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+    .control-checkbox input:disabled ~ .control_indicator:after {
+        border-color: #7b7b7b;
+    }
+    .products-container {
+        width: 78%;
+        margin-left: 2%;
+    }
+    .product-container {
+        margin-right: 7px;
+        margin-left: 7px;
+        height: 270px;
+    }
+    .img-container{
+        height: 180px;
+    }  
+    .product:hover .img-container img {
+        opacity: 0.5;
+    }
+    .img-container img {
+        transition: opacity 0.25s ease-out;
+    }
+    .text {
+        margin: -16% 10px 0 10px;
+    }
+
+    .filter-scroll::-webkit-scrollbar-track
+    {
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+    
+    .filter-scroll::-webkit-scrollbar
+    {
+        width: 8px;
+        background-color: #ffffff;
+    }
+    
+    .filter-scroll::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        background-color: #c7c4c4;
+    }
+    .sidenav-filter {
+        display: none !important;
+    }
+}
+@media (min-width:1200px) {
+    .products-container {
+        width: 79%;
+        margin-left: 1%;
+    }
+    .product-container {
+        margin-right: 11px;
+        height: 330px;
+    }
+    .img-container{
+        height: 210px;
+    }
+    .sneaker-name {
+        font-size: 17px;
+        height: 60px;
+    }
+    .price {
+        font-size: 22px;
+    }
+}

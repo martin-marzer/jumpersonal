@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Editar producto</title>
+        <%- include("./partials/head") %>
+        <link rel='stylesheet' href='/css/productEdit.css'>
+    </head>
+<body>
+    <%- include("./partials/header") %>
+    <%- include("./partials/menuMobile") %>
+
+    <main class="container_main">
+        <form class="formulario-edit" method="POST" action="/products/edit/<%= articulo.id %>?_method=PUT">
+            <h1 class="titulo">Editando <%= articulo.name %></h1>
+            <div>
+                <input class="formulario-input" type="text" name="name" class="cambiar-producto" value="<%= articulo.name %>" placeholder="Nuevo nombre" required>
+            </div>
+            <div>
+                <label for="fecha">Fecha de entrada:</label>
+                <input class="formulario-input" type="date" name="date" id="fecha" class="cambiar-producto" value="<%= articulo.date %>"  min="2021-01-01" max="2022-01-01" required>
+            </div>
+            <div class="selects">
+                <div class="talles">
+                    <select id="select-talles" name="talle" required>
+                        <option value="35-37"
+                        <% if (articulo.talle == "35-37") { %>
+                            selected
+                            <% } %>
+                        >35-37</option>
+                        <option value="38-40"
+                        <% if (articulo.talle == "38-40") { %>
+                            selected
+                            <% } %>
+                        >38-40</option>
+                        <option value="41-43"
+                        <% if (articulo.talle == "41-43") { %>
+                            selected
+                            <% } %>
+                        >41-43</option>
+                        <option value="44-35"
+                        <% if (articulo.talle == "44-35") { %>
+                            selected
+                            <% } %>
+                        >44-35</option>
+                    </select>
+                </div>
+                <div class="marcas">
+                    <select id="select-marcas" name="brand" required>
+                        <option value="adidas"
+                        <% if (articulo.brand == "adidas") { %>
+                            selected
+                            <% } %>
+                        >Adidas</option>
+
+                        <option value="fila"
+                        <% if (articulo.brand == "fila") { %>
+                            selected
+                            <% } %>
+                        >Fila</option>
+
+                        <option value="nike"
+                        <% if (articulo.brand == "nike") { %>
+                            selected
+                            <% } %>
+                        >Nike</option>
+
+                        <option value="vans"
+                        <% if (articulo.brand == "vans") { %>
+                            selected
+                            <% } %>
+                        >Vans</option>
+
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <input class="formulario-input" min="0" step="1000" type="number" name="price" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
+            </div>
+           <!-- <div class="file-upload">
+                <input class="file-upload__input" type="file" for="myFile" name="myFile" id="myFile" required multiple>
+                <button class="file-upload__button" type="button">Imagen del producto</button>
+                <span class="file-upload__label"></span>
+            </div>  -->
+            <div class="col-12">
+                <label for="description" class="form-label">Descripción:</label>
+                <textarea name="description" id="description" class="descripcion" required ><%= articulo.description %></textarea>
+            </div>
+            <section class="wrapper">
+                <button type="submit" class="add_edit_product">Guardar Datos</button>
+                <button type="reset" class="add_edit_product">Borrar Datos</button>
+                </section>
+            </form>
+    </main>
+    <%- include("./partials/scripts") %>
+    <script src="/js/edit-CreateProduct.js"></script>
+</body>
+</html>

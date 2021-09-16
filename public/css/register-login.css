@@ -1,0 +1,232 @@
+/* main */ 
+body {
+    background-color: #f6f6f6;
+}
+.img-form img {
+    width: 100%;
+}
+
+.field {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+    position: relative;
+}
+.field i {
+    position: absolute;
+}
+.field .eyePsw {
+    bottom: 15px;
+    right: 10px;
+}
+i.fas.fa-exclamation-circle {
+    bottom: 32px;
+    right: 10px;
+    color: #dc3545;
+}
+.formulario .field input[type=text], .formulario .field input[type=date], .formulario .field input[type=password], .formulario .field input[type=email] {
+    height: 45px;
+    border: 1px solid #a2a2a2;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border: 1px solid #dc3545 !important;
+    padding-right: calc(1.5em + .75rem);
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+.text-danger {
+    color: #dc3545;
+}
+.formulario .field input:focus, .formulario .field button:focus {
+    outline: 2px rgb(0, 0, 0);
+}
+.formulario .field input[type=date] {
+    color: rgb(128, 128, 128);
+}
+label.field {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.field button {
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s;
+}
+.field button:hover {
+    background-color: #3f3f41;
+}
+
+.formulario .field button {
+    text-transform: uppercase;
+}
+.field label a, .miembro a {
+    color: #002244;
+    text-decoration:underline !important;
+    font-weight: 800;
+}
+
+
+@media (max-width:768px) {
+    #jumpstore-form{
+        background: rgb(255, 255, 255);
+        margin: 5%;
+    }
+    .formulario {
+        padding: 5%;
+
+    }
+    
+    .formulario .field input[type=text], .formulario .field input[type=date], .formulario .field input[type=password],.formulario .field input[type=email]{
+        width: 100%;
+        padding-left: 10px;
+        border-radius: 5px;
+        background-color: #dfdfdf;
+        color: #000000;
+        font-size: 14px;
+        
+    }
+    .formulario .field button {
+        padding: 0;
+        background-color: #000000 ;
+        color:#dfdfdf;
+    }
+    .txt-title-content  {
+        text-align: center;
+        margin: 0 0 60px 0;
+    }
+    .txt-title-content h1 {
+        margin: 0 0 30px 0;
+        font-size: 30px;
+    }
+    .txt-title-content h2 {
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0;
+    }
+    .field label {
+        margin-bottom: 20px;
+    }
+    .field.terminos {
+        display: block;
+        text-align: center;
+    }
+    .field label a {
+        color: #002244;
+        text-decoration-line: revert !important;
+        font-weight: 800;
+    }
+    .field-cancelar-registrar {
+        display: flex;
+        justify-content: space-between;
+        height: 45px;
+        margin: 30px 0;
+    }
+    .field-cancelar-registrar button {
+        width: 48%;
+        background: rgb(0, 0, 0);
+        border: none;
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+    }
+    .field-cancelar-registrar button:first-of-type {
+        background: rgb(61, 61, 61);
+    }
+    .miembro {
+        text-align: center;
+    }
+    .formulario input:-webkit-autofill,
+    .formulario input:-webkit-autofill:hover, 
+    .formulario input:-webkit-autofill:focus, 
+    .formulario  input:-webkit-autofill:active
+    {
+    -webkit-box-shadow: 0 0 0 30px #dfdfdf inset !important;
+    box-shadow: 0 0 0 30px #dfdfdf inset !important;
+    }
+    .formulario input:-webkit-autofill
+    {
+    -webkit-text-fill-color: #000000 !important;
+    }
+   
+} 
+
+@media (min-width:769px) {
+    main {
+        background-image: url("/images/contenido-pagina/zapatillaForm.jpg");
+        background-position: 80% 60%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .formulario {
+        background: rgb(255, 255, 255);
+        padding: 5%;
+        border-radius: 5px;
+        filter: opacity(0.9);
+    }
+    .img-form {
+        display: none;
+    }
+    #jumpstore-form {
+        width: 50%;
+        padding: 5% 0;
+    }
+    .txt-title-content {
+        text-align: center;
+        margin: 0 0 30px 0;
+    }
+    .txt-title-content h1 {
+        margin: 0;
+        font-size: 30px;
+    }
+    .txt-title-content h2 {
+        font-size: 15px;
+        font-weight: 400;
+    }
+    .field label {
+        margin-bottom: 20px;
+    }
+    .field i {
+        cursor: pointer;
+    }
+    .field.terminos {
+        display: block;
+        text-align: center;
+    }
+
+    .field-cancelar-registrar {
+        display: flex;
+        justify-content: space-between;
+        height: 45px;
+        margin: 30px 0;
+    }
+    .field-cancelar-registrar button {
+        width: 48%;
+        background: rgb(0, 0, 0);
+        border: none;
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+    }
+    .field-cancelar-registrar button:first-of-type {
+        background: rgb(61, 61, 61);
+        transition: all 0.2s;
+    }
+    .field-cancelar-registrar button:first-of-type:hover {
+        background: rgb(0, 0, 0);
+    }
+    .miembro {
+        text-align: center;
+    }
+    footer {
+        display: none;
+    }
+} 
+@media (min-width:992px) {
+    #jumpstore-form {
+        width: 30%;
+        padding: 5% 0;
+    }
+}

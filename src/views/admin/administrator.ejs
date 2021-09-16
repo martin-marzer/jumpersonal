@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Panel de administrador</title>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="/css/administrator.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="sliderbar">
+        <div class="logo_content">
+            <div class="logo_administrator">
+                <i class='bx bxs-user'></i>
+                <div class="logo_name">Jumpstore</div>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Buscar...">
+                <span class="tooltip">Buscar</span>
+            </li>
+              <li>
+                <a href="#">
+                  <i class='bx bx-user'></i>
+                  <span class="links_name">Usuarios</span>
+                </a>
+                <span class="tooltip">Usuarios</span>
+              </li>
+              <li>
+                <a href="#">
+                    <i class='bx bx-chat'></i>
+                  <span class="links_name">Mensajes</span>
+                </a>
+                <span class="tooltip">Mensajes</span>
+              </li>
+              <li>
+                <a href="/administratorToolsProducts">
+                  <i class='bx bx-closet'></i>
+                  <span class="links_name">productos</span>
+                </a>
+                <span class="tooltip">productos</span>
+              </li>
+              <div class="profile_content">
+                  <div class="profile">
+                      <div class="profile_details">
+                         <img src="/images/administrador/usuarioAdministrador.png" alt=""> 
+                        <div class="name_job">
+                            <div class="name">LeBron James</div>
+                            <div class="job">Vendedor</div>
+                        </div>
+                      </div>
+                      <a href="/">
+                        <i class='bx bx-log-out' id="log_out"></i>
+                      </a>
+                  </div>
+              </div>
+        </ul>
+    </div>
+    <main class="home_content">
+        <h1 class="text">Hola James!</h2>
+        <p class="subtitulo">Aqui tienes un resumen de tu sitio web</p>
+        <div class="home">
+        <article class="article_content_1">
+          <a href="/administratorToolsUsers"></a>
+          <section class="section_number_1"> <%= usuarios.length %>  usuarios</section>
+          <i class='bx bxs-user'></i>
+          <section class="section_link"><p>Ver más</p></section>
+        </article>
+        <article class="article_content_2">
+          <section class="section_number_2">3 mensajes</section>
+          <i class='bx bxs-user'></i>
+          <section class="section_link"><a href="#">Ver más</a></section>
+        </article>
+        <article class="article_content_3">
+          <a href="/administratorToolsProducts"></a>
+          <section class="section_number_3"><%= articulos.length %> products.</section>
+          <i class='bx bxs-user'></i>
+          <section class="section_link"><p>Ver más</p></section>
+        </article>
+       </div>
+    </main>
+    
+    <script src="/js/administrator.js"></script>
+
+</body>
+</html>

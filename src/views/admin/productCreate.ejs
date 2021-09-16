@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Añadir nuevo producto</title>
+        <%- include("./partials/head") %>
+        <link rel="stylesheet" href="/css/productCreate.css">
+    </head>
+<body>
+    <%- include("./partials/header") %>
+    <%- include("./partials/menuMobile") %>
+    <main>
+    <form class="formulario-register" method="POST" action="/administratorToolsProducts" enctype="multipart/form-data">
+    <h1 class="titulo">Añadir producto</h1> 
+    <div>
+        <input class="formulario-input" type="text" name="name" class="crear-producto" placeholder="Nombre del producto" required>
+    </div>
+    <div>
+        <label for="fecha">Fecha de entrada:</label>
+        <input class="formulario-input" type="date" name="fechaEntrada" id="fecha" class="cambiar-producto"  min="2021-01-01" max="2022-01-01" required>
+    </div>
+    <div class="selects">
+        <div class="talles">
+            <select id="select-talles" required>
+                <option value="" selected disabled>Selecciona talle</option>
+                <option value="35-37">35-37</option>
+                <option value="38-40">38-40</option>
+                <option value="41-43">41-43</option>
+                <option value="44-35" >44-35</option>
+            </select>
+        </div>
+        <div class="marcas">
+            <select id="select-marcas" required>
+                <option value="" selected disabled>Selecciona marca</option>
+                <option value="adidas" >Adidas</option>
+                <option value="fila">Fila</option>
+                <option value="nike" >Nike</option>
+                <option value="vans">Vans</option>
+            </select>
+        </div>
+
+    </div>
+    <div>
+        <input class="formulario-input" type="number"  min="0" step="1000" name="precio" class="crear-producto" placeholder="Precio" required>
+    </div>
+
+    <div class="file-upload">
+        <input class="file-upload__input" type="file" for="myFile" name="myFile" id="myFile" required multiple>
+        <button class="file-upload__button" type="button">Imagenes del producto (solo 3)</button>
+        <span class="file-upload__label"></span>
+    </div>
+    <div class="col-12">
+        <label for="description" class="form-label">Descripción:</label>
+        <textarea name="descripcion" id="description" class="form-input" placeholder="Aquí coloca una descripcion del producto" required></textarea>
+    </div>
+    <section class="wrapper">
+        <button type="submit" class="add_edit_product">Enviar</button>
+        <button type="reset" class="add_edit_product">Borrar</button>
+        </section>
+    </form>
+    </main>
+    <%- include("./partials/scripts") %>
+    <script src="/js/edit-CreateProduct.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "username": "martin_marzer",
+    "email": "xxxxx@xxx.com",
+    "password": "hola123pa",
+    "category": "admin"
+  },
+  {
+    "id": 2,
+    "username": "alegon7",
+    "email": "xxxxx@xxx.com",
+    "password": "chau123pa",
+    "category": "admin"
+  },
+  {
+    "id": 3,
+    "username": "eldes conocido",
+    "email": "xxxxx@xxx.com",
+    "password": "estoNoEsUnaContraseña",
+    "category": "user"
+  },
+  {
+    "id": 4,
+    "username": "comprador IV",
+    "email": "xxxxx@xxx.com",
+    "password": "estoNoEsUnaContraseñaLaSecuela",
+    "category": "user"
+  },
+  {
+    "id": 5,
+    "username": "martin",
+    "email": "martinvazquez1104@gmail.com",
+    "password": "$2a$10$pLgJLTzebjs0PnbeyAh1WeuImVh6mLMhqiOc5iAUwKjDp3FCJqTXC",
+    "category": "user"
+  }
+]
