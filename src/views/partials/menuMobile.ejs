@@ -11,20 +11,36 @@
             <li><a href="/">Inicio</li></a>
             <li><a href="/sneakers/OrderByReleaseDateDESC">Productos</li></a>
             <li><a href="/">Ofertas</li></a>
-            <li><a href="/">Favoritos</li></a>
+            <li><a href="/login">Favoritos</li></a>
             <li><a href="/carrito">Carrito</li></a>
         </ul>
         
         <div class="footer-modal">
             <div class="nav-user">
                 <ul>
-                    <a href="/administrator" class="icon-admin"><i class="fas fa-user-cog"></i></a>
-                    <li class="user-item">
-                        <a href="/register">Crear Cuenta</a>
-                    </li>
-                    <li class="user-item">
-                        <a href="/login">Iniciar Sesión</a>
-                    </li>
+
+                    <% if (locals.usuario) { %>
+                        <li class="user-item">
+                            <a href="/profile">Mi perfil</a>
+                        </li>
+                        <li class="user-item">
+                            <a href="/logout">Salir</a>
+                        </li>
+                    <% } else  {%>
+                        <li class="user-item">
+                            <a href="/register">Registrarse</a>
+                        </li>
+                        <li class="user-item">
+                            <a href="/login">Iniciar Sesión</a>
+                        </li>
+                    <% } %>
+
+                    <% if (locals.usuario && locals.usuario.category == "admin") { %>
+                        <a href="/administrator" class="icon-admin"><i class="fas fa-user-cog"></i></a>
+                    <% } else { %>
+                        <a href="/register" class="icon-admin"><i class="far fa-user"></i></a>
+                    <% } %>
+                   
                 </ul>
     
             </div>

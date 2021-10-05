@@ -1,10 +1,10 @@
 function guestMiddleware (req, res, next) {
-    if (req.session.usuarioLogueado == undefined) {
+    if (req.session.userLogged == undefined) {
         next()
     } else {
-        res.send("Acceso denegado, ya tenes una cuenta")
+        res.redirect("/profile")
     }
-   }
+}
    
    
    module.exports = guestMiddleware

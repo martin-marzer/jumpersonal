@@ -1,255 +1,245 @@
-/* General */
-.main-carrito{
-    margin-top: 40px ;
-    margin-bottom: 40px;
+
+/* texto arriba mi carrito etc etx */
+.title-help {
+    margin-bottom: 30px;
 }
-
-
-/* Header carrito */
-.titulo-carrito-header{
+.title {
+    display: flex;
+    align-items: center;
+}
+.title p:first-of-type {
+    font-size: 25px;
+    margin: 0 20px 0 0;
+}
+.title p:last-of-type {
+    font-size: 14px;
     margin: 0;
 }
-.titulo-carrito-header{
-    font-weight: 500;
-}
-.carrito-header-titulo-producto{
-    display: flex;
-    margin: 10px 0;
-    align-items: center;
-}
-.producto-carrito-header{
-    margin-top: 5px;
-    margin-left: 20px;
-}
 
-.seguir-comprando{
-    margin-left: 0 ;
-    color:#0070d2;
+.help {
     display: flex;
     align-items: center;
-}
-
-.ayuda-contenedor{
-    display: flex;
     justify-content: space-between;
 }
+.help a {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+    font-size: 12px;
+}
+.help p {
+    font-size: 10px;
+}
 
-
-/* Producto Carrito */
-
-
-.contenedor-producto{
-    border: 1px solid gray;
-    border-radius: 5px;
-    width: 65%;
+/* productos q se agregan al carrito */
+.product {
     display: flex;
+    outline: 1px solid rgb(216 216 216);
     padding: 10px;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #d5d6d522;
+    margin-bottom: 20px;
+}
+.info-product {
+    width: 100%;
 }
 
-.segundo-contenedor-producto{
-    margin: 8px 8px;
-    position: relative;
+.up-info, .down-info {
+    height: 25%;
 }
-
-.basura-icon{
+.info-product p {
+    margin: 0 0 10px 0;
+}
+.text-product {
+    justify-content: space-around;
+}
+.name {
+    width: 90%;
+}
+.name p, .precio-zapas, .talle-edit a, .help a{
+    font-weight: 600;
+}
+p.precio-zapas {
+    font-size: 5vw !important;
+}
+.trash-icon {
+    width: 10%;
     font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.imagen-producto-carrito{
-    width: 30%;
-}
-.imagen-producto{
-    width: 100%;
-}
-.contenedor-partes{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding-left: 3%;
-}
-.contenedor-texto-producto{
-    display: flex;
-    justify-content: space-between;
-}
-.nombre-item p{
-    margin: 0;
-    font-weight: bold;
+.shopping-product, .talle-edit a {
+    color: #212529;
 }
 
-.contenedor-informacion-producto{
-    display: flex;
+.precio-cantidad {
     justify-content: space-between;
 }
 
-.talle{
-    font-size: 14px;
+.talle-edit a{
+    text-decoration: underline;
 }
-.editar-producto{
-    font-size: 13px;
-    color:#0070d2;
+.cantidad-selector, .cantidad-precio-item {
+    width: 40%;
 }
-.precio-cantidad-contenedor{
+.info-product .up-info p, .info-product .up-info i {
+    font-size: 5vw;
+}
+.info-product .down-info p, .info-product .down-info a {
+    font-size: 3.5vw;
+}
+.up-info .text-product, .down-info .shopping-product, .down-info .shopping-product .precio-cantidad {
     display: flex;
-    font-size: 14px;
-    padding-right: 20%;
 }
 
-.cantidad-precio-item{
-    margin-left: 10px;
-}
-.precio-zapas{
-    font-weight: bold;
-    font-size: 18px;
-    letter-spacing: 2px;
-}
-.total-precio{
-    margin-bottom: 0;
-}
 
-.selector-cantidad{
-    height: 30px;
-    margin-top: 20%;
-    margin-left:12%;
-}
-.cantidad-selector p{
-    margin-bottom: 0;
-}
 
-/* Menu Derecha */
-.texto-codigo{
-    margin: 0;
-    font-size: 16px;
-    font-weight: 500;
-} 
-
-#input-codigo2{
+/* total de cuanto sale la compra */
+.products-resume {
+    margin: 30px 0;
+}
+.resume {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 0;
+}
+.table.cart-resume {
     width: 100%;
-    padding: 10px;
-    border: 0.2px solid black;
+}
+td {
+    border-top: 1px solid #bababa;
+    padding: 10px 0px 10px 15px;
+}
+.pago {
+    margin-top: 20px ;
+}
+.btn {
+    color: rgb(255, 255, 255);
+    background-color: rgb(131, 131, 131);
+    padding: 10px 20px;
     border-radius: 3px;
-}
-.boton-input-codigo{
-    position: relative;
-    margin: 15px 0;
-}
-.boton-codigo,.boton-envio{
-    position: absolute;
-    top: 1%;
-    right: 0%;
-}
-.boton-codigo2{
-    height: 40px;
-    width: 130%;
-    background-color: black;
-    color: white;
-    border-radius: 4px;
-    border: 1px solid black;
-    margin-left: -30%;
-}
-.texto-envio{
-    margin: 0;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-#input-envio2{
     width: 100%;
-    padding: 10px;
-    border: 0.2px solid black;
-    border-radius: 3px;
-}
-
-.boton-comprar2{
-    width: 100%;
-    height: 38px;
-    background-color: black;
-    color: white;
-    border: 1px solid black;
-    border-radius: 4px;
-}
-/* recomendados */
-.titulo-zapatilla{
-    margin-bottom: 5px;
-}
-.recomendados{
-    margin-top: 20px;
-}
-.titulo-recomendados2{
-    font-size: 28px;
-    font-weight: 500;
-    margin-bottom: 50px;
+    display: block;
     text-align: center;
-}
-.zapatillas-recomendadas{
-    display: flex;
-}
-.zapatilla{
-    margin-right: 65px;
-    width: 100%;
-}
-.zapatilla:last-of-type{
-    margin: 0;
-}
-
-.zapatilla img{
-    margin-bottom: 10px;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.precio-zapatilla{
-    font-weight: 500;
-    margin-top: 22px;
-    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 
 
+@media (min-width: 480px) {
+    .info-product .up-info p, .info-product .up-info i  {
+        font-size: 22px;
+    }
+    .info-product .down-info p, .info-product .down-info a {
+        font-size: 18px;
+    }
+    p.precio-zapas {
+        font-size: 4.5vw !important;
+    }
+}
+@media (min-width: 650px) {
+    p.precio-zapas {
+        font-size: 3.5vw !important;
+    }
+}
 
 
 @media (max-width: 767px){
-    .contenedor-producto{
-        margin-bottom: 20px;
-        width: 100% !important;
-    }
-    .zapatillas-recomendadas{
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-        margin: 0 auto;
-    }
-    .zapatilla{
-        margin: 0;
-    }
-    .imagen-producto{
-        height: 15vw;
-    }
-    .texto-codigo{
-        text-align: center;
-    }
-    .ayuda-contenedor{
-        margin-bottom: 20px;
-    }
-    .carrito-header-titulo-producto{
+    .title {
         justify-content: space-between;
+    }
+    .img-product {
+        display: none;
+    }
+    .shopping-product {
+        flex-direction: column;
+        width: 60%;
+    }
+    .talle-edit, .precio-cantidad {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .down-info {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+    }
+    .img-product-mobile {
+        width: 30%;
+        height: 20vw;
+    }
+    .img-product-mobile img {
+        width: 100%;
+    }
+    .resume {
+        margin-top: 50px;
     }
 }
 
 @media (min-width: 768px) {
-    .contenedor-principal{
+    .img-product-mobile {
+        display: none;
+    }
+    .product {
+        height: 120px;
+    }
+    .info-product {
+        width: 75%;
+    }
+    .info-product p {
+        margin: 0;
+    }
+    .img-product {
+        width: 20%;
+        align-self: center;
+    }
+    .img-product img {
+        border-radius: 2px;
+    }
+    .up-info, .down-info {
+        height: 50%;
+    }
+    
+    .shopping-product {
+        justify-content: space-between;
+    }
+    .talle-edit, .precio-cantidad {
+        width: 50%;
+    }
+    .products-resume {
         display: flex;
+        justify-content: space-between;
+        margin: 50px 0;
     }
-    .contenedor-producto{
-        height: 100%;
+
+    .col-products {
+        width: 65%;
     }
-    .contenedor-menu-derecha{
+    .col-resume {
         width: 30%;
-        margin: 0 0 0 5%;
     }
-    .texto-codigo{
-        text-align: right;
+    .title p:first-of-type {
+        font-size: 28px;
     }
-    .recomendados{
-        margin-top: 200px;
+    .title p:last-of-type {
+        font-size: 18px;
+    }
+    .help p {
+        font-size: 16px;
+    }
+    .help a {
+        font-size: 18px;
+    }
+    p.precio-zapas {
+        font-size: 20px !important;
+    }
+}
+@media (min-width: 992px) {
+    .talle-edit, .precio-cantidad {
+        width: 40%;
     }
 }

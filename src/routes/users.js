@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const usersController = require("../controllers/usersController");
+const authMiddleware = require("../middlewares/authMiddleware");
+const guestMiddleware = require("../middlewares/guestMiddleware");
 const fs = require("fs")
 const path = require("path")
 const usersFilePath = path.resolve(__dirname, '../database/users.json');
@@ -39,11 +41,17 @@ const validations = [
     .notEmpty()
 ];
 
-router.get("/register", usersController.register);
+router.get("/register", guestMiddleware, usersController.register);
 
 router.post("/register", validations, usersController.processRegister);
 
-router.get("/login", usersController.login);
+router.get("/login", guestMiddleware, usersController.login);
+
+router.post("/login", usersController.loginProcess);
+
+router.get('/logout', usersController.logout);
+
+router.get("/profile", authMiddleware, usersController.profile);
 
 
 

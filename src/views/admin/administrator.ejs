@@ -48,7 +48,9 @@
                       <div class="profile_details">
                          <img src="/images/administrador/usuarioAdministrador.png" alt=""> 
                         <div class="name_job">
-                            <div class="name">LeBron James</div>
+                            <div class="name">
+                              <%= user.username %>
+                            </div>
                             <div class="job">Vendedor</div>
                         </div>
                       </div>
@@ -60,7 +62,7 @@
         </ul>
     </div>
     <main class="home_content">
-        <h1 class="text">Hola James!</h2>
+        <h1 class="text">Hola <%= user.username %></h2>
         <p class="subtitulo">Aqui tienes un resumen de tu sitio web</p>
         <div class="home">
         <article class="article_content_1">

@@ -5,6 +5,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
         perMove: 1,
         width: 1000,
         pagination: false,
+        focus    : 0,
+        fixedWidth: '20rem',
         classes: {
             arrow : 'splide__arrow arrow-splide',
             prev  : 'splide__arrow--prev arrow-splide-prev',

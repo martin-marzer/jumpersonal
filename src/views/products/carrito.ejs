@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Carrito</title>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="/css/carrito.css">
+</head>
+<body>
+    <%- include("./partials/header") %>
+    <%- include("./partials/menuMobile") %>
+    <main>
+            <div class="container">
+                <div class="products-resume">
+
+                    <div class="col-products">
+                        <div class="title-help">
+                            <div class="title">
+                                <p>Mi Carrito</p>
+                                <p>1 Producto</p>
+                            </div>
+                            <div class="help">
+                                <a href="/sneakers/OrderByReleaseDateDESC">Seguir Comprando</a>
+                                <p>¿Necesitás ayuda? <strong>0800-Don-Rouch</strong></p>
+                            </div>
+                        </div>
+                        <div class="products-container">
+                            <div class="product">
+                                <div class="img-product">
+                                    <img src="../images/zapatillas/jorda-jbalbin.jpeg">
+                                </div>
+                                <div class="info-product">
+                                    <div class="up-info">
+                                        <div class="text-product">
+                                            <div class="name">
+                                                <p>Jordan 1 Retro High J Balvin</p>
+                                            </div>
+                                            <div class="trash-icon">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="down-info">
+                                        <div class="img-product-mobile">
+                                            <img src="../images/zapatillas/jorda-jbalbin.jpeg">
+                                        </div>
+                                        <div class="shopping-product">
+                                            <div class="talle-edit">
+                                                <p class="talle">Talle 40</p>
+                                                <a href="/">Editar Producto</a>
+                                            </div>
+                                            <div class="precio-cantidad">
+                                                <div class="cantidad-selector">
+                                                    <p>Cantidad</p>
+                                                    <select name="select" class="selector-cantidad">
+                                                        <% for( let i = 1; i <= 10; i++ ) { %>
+                                                            <option value="value-<%= i %>"><%= i %> </option>
+                                                        <% } %> 
+                                                    </select>
+                                                </div>
+                                                <div class="cantidad-precio-item">
+                                                    <p class="total-precio">Total</p>
+                                                    <p class="precio-zapas">$20000</p> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-resume">
+                        <!-- cart resume -->
+                        
+                    <div class="resume">
+                    
+                    <h3>Resumen</h3>
+                    
+                    <table class="table cart-resume">
+                        <tbody>
+                            <tr>
+                                <td><strong>Subtotal:</strong></td>
+                                <td class="text-right"><span class="currency"><span class="currency-symbol-ars currency-symbol currency-symbol-left">$</span><span class="amount"><span class="integer">0</span><span class="comma">,</span><span class="decimal">00</span></span></span></td>
+                            </tr>
+                                            <tr>
+                                <td>
+                                    <strong>Costo de envío:</strong>
+                                                    <br>
+                                    <span class="text-muted"><small>Se calculará durante el proceso de pago.</small></span>
+                                                </td>
+                                <td class="text-right">
+                                                    <span class="currency"><span class="currency-symbol-ars currency-symbol currency-symbol-left">$</span><span class="amount"><span class="integer">0</span><span class="comma">,</span><span class="decimal">00</span></span></span>							</td>
+                            </tr>
+                            <tr>
+                                <td class="lead">Total:</td>
+                                <td class="lead text-right"><span class="currency"><span class="currency-symbol-ars currency-symbol currency-symbol-left">$</span><span class="amount"><span class="integer">0</span><span class="comma">,</span><span class="decimal">00</span></span></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pago">
+                        <a href="#0" id="ConfirmOrder" class="btn btn-primary btn-lg btn-block" disabled="disabled">Comprar</a>
+                    </div>
+                    
+                    </div>
+    
+                        <!-- /cart resume -->
+                    </div>
+                </div>
+
+            </div>
+    </main>
+
+    <%- include("./partials/footer") %>
+    <%- include("./partials/scripts") %>
+
+</body>
+</html>

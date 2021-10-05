@@ -147,6 +147,86 @@
     text-align: justify;
     line-height: 25px;
 }
+
+
+.icons-data {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.icon-info i {
+    font-size: 12vw;
+    color: #1e1e1e;
+}
+.icon-info {
+    text-align: center;
+    width: 33%;
+}
+.icon-info.border {
+    border-right:  1px solid #797979;
+    border-left:  1px solid #797979;
+}
+.icon-info button {
+    background: transparent;
+    border: none;
+    text-decoration: underline;
+    color: #797979;
+    font-size: 3.5vw;
+}
+.text-info p:first-of-type {
+    font-weight: 600;
+    height: 7vw;
+    font-size: 3vw;
+}
+
+
+
+.data {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px !important;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+.row-product {
+    margin-top: 50px;
+}
+.label {
+    font-weight: 500;
+}
+  
+
 @media (max-width:767px){
     #jumpstore-page {
         width: 95%;
@@ -158,8 +238,18 @@
     .product-carrito {
         justify-content: center;
     }
-}
+    
 
+
+}
+@media (min-width:500px) {
+    .icon-info button {
+        font-size: 2.5vw;
+    }
+    .text-info p:first-of-type {
+        font-size: 3vw;
+    }
+}
 @media (min-width:768px) {
     #jumpstore-page {
         margin: 2% auto;
@@ -175,7 +265,7 @@
         transition: 0.5s;
         height: 360px;
     }
-    #description-product {
+    #description-product{
         width: 40%;
         margin: 0 0 0 10%;
     }
@@ -185,6 +275,48 @@
     .product-talle select {
         cursor: pointer;
     }
+    .icons-data {
+        margin-top: 90px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .data {
+        overflow: none;
+    }
+    .modal-content {
+        margin: 5% auto; /* 15% from the top and centered */
+      }
+
+    .icon-info {
+        display: flex;
+    }
+    .icon-info button {
+        font-size: 18px;
+    }
+    .text-info p:first-of-type {
+        font-size: 16px;
+    }
+
+    .icon-info i {
+        font-size: 40px;
+        width: 40%;
+    }
+    .text-info {
+        width: 40%;
+    }
+    .text-info p:first-of-type {
+        height: 50px;
+        margin: auto;
+    }
+    .row-product {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .attribute-values {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
 }
 @media (min-width:768px) and (max-width:991px) {
     #description-product h1 {
@@ -233,6 +365,11 @@
 @media (min-width:1200px) {
     #img-product .mySlides img {
         height: 500px
+    }
+}
+@media (min-width:992px) {
+    .icon-info i {
+        font-size: 60px;
     }
 }
 

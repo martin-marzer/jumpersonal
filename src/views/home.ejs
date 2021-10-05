@@ -76,64 +76,40 @@
             </ul>
         </div>
 
+    <div class="brands">
+        <div class="brands-flex">
+            <div class="brandImage-container">
+                <a href="/sneakers/OrderByReleaseDateDESC/adidas">
+                    <img src="/images/contenido-pagina/adidas-logo.png" alt="adidas-logo">
+                </a>
+            </div>
+            <div class="brandImage-container">
+                <a href="/sneakers/OrderByReleaseDateDESC/nike">
+                    <img src="/images/contenido-pagina/jordan-logo.png" alt="jordan-logo">
+                </a>
+            </div>
+            <div class="brandImage-container">
+                <a href="/sneakers/OrderByReleaseDateDESC/fila">
+                    <img src="/images/contenido-pagina/fila-logo.png" alt="fila-logo">
+                </a>
+            </div>
+            <div class="brandImage-container">
+                <a href="/sneakers/OrderByReleaseDateDESC/vans">
+                    <img src="/images/contenido-pagina/vans-logo.png" alt="vans-logo">
+                </a>
+            </div>
+        </div>
+    </div>
+
         <div class="gifcard-container">
             <img class="gifcard" src="images/contenido-pagina/gifcard.jpg" alt="gifcard">
         </div>
 
-            <!-- <div class="wrapper">
-                <h1 href="#">Most Sold Sneakers</h1>
-            </div>
-
-            <section class="container-hot">
-
-
-                <div class="image" >
-                    <a href="/products/detail/1">
-                            <img class="image__img" src="images/zapatillas/nike-mas-vendido.jpg" alt="Nike AIRMAX 97 METALLIC GOLD">
-                    </a>
-                    <div class="description-product">
-                        <div class="image__title">Nike airmax 97 mettallic gold</div>
-                            <p class="image__description">
-                            $4
-                            </p>
-                    </div>
-                </div>
-                <div class="image">
-                    <a href="/products/detail/1">
-                    <img class="image__img" src="images/zapatillas/jorda-jbalbin.jpeg" alt="Jordan 1 Retro High J Balvin">
-                </a>
-                <div class="description-product">
-                    <div class="image__title">Jordan 1 retro high J Balvin</div>
-                    <p class="image__description">
-                        $4
-                    </p>
-                </div>
-                </div>
-            </section> -->
 
             <div class="wrapper">
                 <h1 href="#">ultimos lanzamientos</h1>
             </div>
 
-            <section class="container-new" >
-                <% for (let i = articulos.length -1 ; i > articulos.length - 4; i--) {%>
-            
-                    <% let articulo = articulos[i] %>
-                <a href="/sneakers/detail/<%= articulo.id %>">
-                    <div class="image">
-
-                        <img class="image__img" src="/images/zapatillas/<%= articulo.image[0] %>" alt="Vans old skool pink">
-                    
-                        <div class="description-product">
-                            <div class="image__title"><%= articulo.name %></div>
-                            <p class="image__description">
-                                $<%= articulo.price %>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <% }; %>
-            </section>
 
             <div class="container-splide">
                 <div class="splide">
@@ -144,6 +120,7 @@
                         <button class="splide__arrow splide__arrow--next arrow-splide-next arrow-splide">
                             <i class="fas fa-chevron-right"></i>
                         </button>
+                    </div>
                     <div class="splide__track">
                         <ul class="splide__list">
                             <% for (let i = articulos.length -1 ; i > articulos.length - 5; i--) {%>

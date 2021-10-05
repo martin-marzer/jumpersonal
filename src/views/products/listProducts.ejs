@@ -35,7 +35,7 @@
                                             <% } %>
                                             
                                             />
-                                        <div class="control_indicator"></div>
+
                                     </label>
                                     <label class="control control-checkbox">
                                         fila
@@ -45,7 +45,7 @@
                                             <% } %>
                                             
                                             />
-                                        <div class="control_indicator"></div>
+
                                     </label>
                                     <label class="control control-checkbox">
                                         nike
@@ -55,7 +55,7 @@
                                             <% } %>
                                             
                                             />
-                                        <div class="control_indicator"></div>
+
                                     </label>
                                     <label class="control control-checkbox">
                                         vans
@@ -65,7 +65,7 @@
                                             <% } %>
                                             
                                             />
-                                        <div class="control_indicator"></div>
+
                                     </label>
                                 </div>
                         </div>
@@ -76,48 +76,51 @@
                         <div class="filter-scroll">
                             <div class="control-group talle">
                                 <label class="control control-checkbox">
-                                    35 - 37 
-                                        <input type="checkbox" value="35-37"
-                                        <% if (locals.filter != undefined && filter.includes("35-37")) { %>
+                                    35 - 40 
+                                        <input type="checkbox" value="35-40"
+                                        <% if (locals.filter != undefined && filter.includes("35-40")) { %>
                                             checked
                                         <% } %>
                                         />
-                                    <div class="control_indicator"></div>
                                 </label>
                                 <label class="control control-checkbox">
-                                    38 - 40 
-                                        <input type="checkbox" value="38-40"
-                                        <% if (locals.filter != undefined && filter.includes("38-40")) { %>
+                                    40 - 45
+                                        <input type="checkbox" value="40-45"
+                                        <% if (locals.filter != undefined && filter.includes("40-45")) { %>
                                             checked
                                         <% } %>
                                         />
-                                    <div class="control_indicator"></div>
-                                </label>
-                                <label class="control control-checkbox">
-                                    41 - 43 
-                                        <input type="checkbox" value="41-43"
-                                        <% if (locals.filter != undefined && filter.includes("41-43")) { %>
-                                            checked
-                                        <% } %>
-                                        
-                                        />
-                                    <div class="control_indicator"></div>
-                                </label>
-                                <label class="control control-checkbox">
-                                    44 - 45 
-                                        <input type="checkbox" value="44-45"
-                                        <% if (locals.filter != undefined && filter.includes("44-45")) { %>
-                                            checked
-                                        <% } %>
-                                        />
-                                    <div class="control_indicator"></div>
                                 </label>
 
                             </div>
                         </div>
                     </div>
+                    <div class="each-filter-mobile">
+                        <p class="categoria">Precio</p>
+                        <div class="filter-scroll last">
+                            <div class="control-group precio">
+                                <label class="control control-checkbox">
+                                    0$-19999$
+                                        <input type="checkbox" value="0$-19999$"
+                                        <% if (locals.filter != undefined && filter.includes("0$-19999$")) { %>
+                                            checked
+                                        <% } %>
+                                        />
+                                </label>
+                                <label class="control control-checkbox">
+                                    20000$-max
+                                        <input type="checkbox" value="20000$-max"
+                                        <% if (locals.filter != undefined && filter.includes("20000$-max")) { %>
+                                            checked
+                                        <% } %>
+                                        />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                     <div class="button">
-                        <button type="submit" id="button-form-mobile"> Filtrar</button>
+                        <button type="submit" id="button-form-mobile">Filtrar</button>
+                        <button type="button"  id="button-form-reset-mobile">Cancelar</button>
                     </div>
                 </form>
             </div>
@@ -220,52 +223,58 @@
     
                                 <div class="each-filter">
                                     <p class="categoria">talle</p>
-                                    <div class="filter-scroll">
+                                    <div class="filter-scroll med">
                                         <div class="control-group talle">
                                             <label class="control control-checkbox">
-                                                35 - 37 
-                                                    <input type="checkbox" value="35-37"
-                                                    <% if (locals.filter != undefined && filter.includes("35-37")) { %>
+                                                35 - 40 
+                                                    <input type="checkbox" value="35-40"
+                                                    <% if (locals.filter != undefined && filter.includes("35-40")) { %>
                                                         checked
                                                     <% } %>
                                                     />
                                                 <div class="control_indicator"></div>
                                             </label>
                                             <label class="control control-checkbox">
-                                                38 - 40 
-                                                    <input type="checkbox" value="38-40"
-                                                    <% if (locals.filter != undefined && filter.includes("38-40")) { %>
+                                                40 - 45
+                                                    <input type="checkbox" value="40-45"
+                                                    <% if (locals.filter != undefined && filter.includes("40-45")) { %>
+                                                        checked
+                                                    <% } %>
+                                                    />
+                                                <div class="control_indicator"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="each-filter">
+                                    <p class="categoria">Precio</p>
+                                    <div class="filter-scroll last">
+                                        <div class="control-group precio">
+                                            <label class="control control-checkbox">
+                                                0$-19999$
+                                                    <input type="checkbox" value="0$-19999$"
+                                                    <% if (locals.filter != undefined && filter.includes("0$-19999$")) { %>
                                                         checked
                                                     <% } %>
                                                     />
                                                 <div class="control_indicator"></div>
                                             </label>
                                             <label class="control control-checkbox">
-                                                41 - 43 
-                                                    <input type="checkbox" value="41-43"
-                                                    <% if (locals.filter != undefined && filter.includes("41-43")) { %>
-                                                        checked
-                                                    <% } %>
-                                                    
-                                                    />
-                                                <div class="control_indicator"></div>
-                                            </label>
-                                            <label class="control control-checkbox">
-                                                44 - 45 
-                                                    <input type="checkbox" value="44-45"
-                                                    <% if (locals.filter != undefined && filter.includes("44-45")) { %>
+                                                20000$-max
+                                                    <input type="checkbox" value="20000$-max"
+                                                    <% if (locals.filter != undefined && filter.includes("20000$-max")) { %>
                                                         checked
                                                     <% } %>
                                                     />
                                                 <div class="control_indicator"></div>
                                             </label>
-    
                                         </div>
                                     </div>
                                 </div>
                                 <div class="buttons-filter">
                                     <div class="button">
                                         <button type="submit" id="button-form">Filtrar</button>
+                                        <button type="button" id="button-form-reset">Cancelar</button>
                                     </div>
                                 </div>
 
@@ -282,10 +291,7 @@
                                             
                                             <div class="info-product">
                                                 <div class="img-container">
-                                                    <a href="/sneakers/detail/<%= articulo.id %>">
-                                                        <img src="/images/zapatillas/<%= articulo.image[0] %>" alt="producto" class="img-product">
-                                                    </a>
-                                                    
+                                                    <img src="/images/zapatillas/<%= articulo.image[0] %>" alt="producto" class="img-product">
                                                 </div>
                                                 <div class="text">
                                                     <div class="sneaker-name">

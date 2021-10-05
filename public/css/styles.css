@@ -217,8 +217,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     border-color: rgba(255, 255, 255, 0.4);
 }
 #jumpstore-navbar ul{
-    justify-content: center;
     display: flex;
+    justify-content: space-between;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -342,6 +342,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 .nav-user ul .icon-admin {
     padding: 0 5%;
+    order: -1;
+    width: 20%;
 }
 .nav-user ul i{
     color: rgb(255, 255, 255);
@@ -350,6 +352,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .nav-user li.user-item {
     margin: 2vw;
     font-size: 4vw;
+    width: 30%;
 }
 
 
@@ -670,7 +673,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         font-size: 3vw;
         line-height: 4vw;
       }
-
 }
 
 @media (min-width: 992px){
@@ -685,6 +687,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         /* nav */
     #jumpstore-navbar a{
         padding: 10px 45px;
+    }
+    #jumpstore-navbar ul{
+        justify-content: center;
     }
 }
 @media (min-width: 1200px){

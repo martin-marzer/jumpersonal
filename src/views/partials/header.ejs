@@ -45,23 +45,32 @@
                             <button> <i class="far fa-user"></i> </button>
                             <div class="dropdown-padding">
                                 <div class="dropdown-content">
-                                    <a href="/register">Registrarse</a>
-                                    <a href="/login">Iniciar sesion</a>
+
+                                    <% if (locals.usuario) { %>
+                                        <a href="/profile">Mi perfil</a>
+                                        <a href="/logout">Salir</a>
+                                    <% } else  {%>
+                                        <a href="/register">Registrarse</a>
+                                        <a href="/login">Iniciar sesion</a>
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
 
                         <div id="jumpstore-cart">
                             <button>
-                                <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="/carrito" class="icono"><i class="fas fa-shopping-cart"></i></a>
                             </button>
                         </div>
-                        
-                        <div id="jumpstore-admin">
-                            <button>
-                                <a href="/administrator"><i class="fas fa-user-cog"></i></a>
-                            </button>
-                        </div>
+                        <% if (locals.usuario && locals.usuario.category == "admin") { %>
+                            <%# console.log(locals.usuario); %>
+                            <div id="jumpstore-admin">
+                                <button>
+                                    <a href="/administrator" class="icono"><i class="fas fa-user-cog"></i></a>
+                                </button>
+                            </div>
+                            <% } %>
+
                         <div id="jumpstore-search-btn">
                             <button>
                                 <i class="fas fa-search"></i>
@@ -86,7 +95,7 @@
                 <li><a href="/">Inicio</li></a>
                 <li><a href="/sneakers/OrderByReleaseDateDESC">Productos</li></a>
                 <li><a href="/">Ofertas</li></a>
-                <li><a href="/">Favoritos</li></a>
+                <li><a href="/login">Favoritos</li></a>
             </ul>
         </div>
     </div>

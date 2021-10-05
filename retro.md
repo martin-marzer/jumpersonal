@@ -31,3 +31,14 @@
 * Hacer menos: Nada
 
 * Dejar de hacer: Dejar todo para ultimo momento 
+
+## SPRINT 4
+* Comenzar a hacer: avisar cuando hacemos cambios para que hagamos un pull
+
+* Hacer más:  Más anotaciones en el codigo
+
+* Continuar haciendo: Hacer los opcionales
+
+* Hacer menos: Nada
+
+* Dejar de hacer: Dejar todo para ultimo momento!!!

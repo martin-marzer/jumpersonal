@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const adminController = require("../controllers/adminController");
+const adminMiddleware = require("../middlewares/adminMiddleware");
 const path = require("path");
 const multer = require("multer");
 
@@ -32,23 +33,23 @@ const multerStorage = multer.diskStorage({
 });
 
 /*** GET ADMINISTRATOR ***/  
-router.get("/administrator", adminController.administrator);
+router.get("/administrator", adminMiddleware, adminController.administrator);
 
 /*** GET TODOS LOS PRODUCTOS COMO ADMIN ***/  
-router.get("/administratorToolsProducts", adminController.administratorTools)
+router.get("/administratorToolsProducts", adminMiddleware, adminController.administratorTools)
 
 /*** CREATE ONE PRDUCT ***/  
-router.get("/productCreate", adminController.productCreate)
+router.get("/productCreate", adminMiddleware, adminController.productCreate)
 router.post('/administratorToolsProducts', upload.array("myFile"), adminController.store); 
 
 /*** EDIT ONE PRDUCT ***/  
-router.get("/products/edit/:id", adminController.productEdit)
+router.get("/products/edit/:id", adminMiddleware, adminController.productEdit)
 router.put('/products/edit/:id', adminController.update);
 
 // /*** DELETE ONE PRODUCT***/ 
-router.delete('/products/delete/:id', adminController.delete); 
+router.delete('/products/delete/:id', adminMiddleware, adminController.delete); 
 
 /*** GET ALL USERS AS ADMIN ***/  
-router.get("/administratorToolsUsers", adminController.administratorUsers)
+router.get("/administratorToolsUsers", adminMiddleware, adminController.administratorUsers)
 
 module.exports = router;

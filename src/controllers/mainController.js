@@ -22,7 +22,7 @@ const controlador = {
 		//aca es para recibir lo escrito y sacarle mayus y tildes
 		let searchUser = req.query.keywords;
 		let normalizeSearch = searchUser.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-		let finalSentence = normalizeSearch.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toLowerCase());
+		let finalSentence = normalizeSearch.toLowerCase();
 		//aca se guardan los datos que coinciden con la busqueda
 		let usersResults = [];
 		for (let i = 0; i < products.length; i++) {

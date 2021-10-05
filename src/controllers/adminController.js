@@ -21,7 +21,8 @@ const controlador = {
         let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
         res.render("administrator", {
             articulos: products,
-            usuarios: users
+            usuarios: users,
+            user: req.session.userLogged
         });
     },
     administratorTools: (req,res) => {
