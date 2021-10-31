@@ -1,9 +1,7 @@
-let form = document.getElementById("password")
-console.log(form)
+window.addEventListener("load", () => {
+   let form = document.getElementById("password")
 let eyePsw = document.querySelector(".field.psw .eyePsw")
-console.log(eyePsw)
-eyePsw.addEventListener ("click", hola);
-function hola () {
+eyePsw.addEventListener("click", () => {
     if (eyePsw.className != "fas fa-eye-slash eyePsw") {
         eyePsw.className = "fas fa-eye-slash eyePsw"
         form.type = "text"
@@ -11,8 +9,7 @@ function hola () {
         eyePsw.className = "fas fa-eye eyePsw"
         form.type = "password"
     }
-}
-
+});
 
 let buttonToDelete = document.getElementById("delete-button")
 buttonToDelete.onclick = () => {
@@ -22,4 +19,8 @@ buttonToDelete.onclick = () => {
         input.value = ""
         
     }
-}
+} 
+})
+
+
+

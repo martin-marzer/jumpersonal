@@ -1,5 +1,6 @@
 
-function sortTableByColumn(table, column, asc = true) {
+window.addEventListener("load", () => {
+    function sortTableByColumn(table, column, asc = true) {
     const dirModifier = asc ? 1 : -1;
     const tBody = table.tBodies[0];
     const rows = Array.from(tBody.querySelectorAll("tr"));
@@ -49,4 +50,7 @@ rows.forEach(row => {
     row.addEventListener("click", () => {
         window.location.href = row.dataset.href
     })
-})
+})})
+
+
+

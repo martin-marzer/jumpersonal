@@ -51,15 +51,14 @@
                 <% articulos.forEach(articulo => { %> 
                 <tr data-href="/sneakers/detail/<%= articulo.id %>">
                     <td><li class="liEditar"><a href="/products/edit/<%= articulo.id %>" class="add_edit_product">Editar</a>
-                        <form method="POST" action="/products/delete/<%= articulo.id %>?_method=DELETE">
-                            <button type="submit" id="delete_product" class="add_edit_product">Borrar</button>
-                        </form>
+                        
                         </li>
                     </td>
                     <td style="width: 10%;"><%= articulo.id %></td>
                     <td><%= articulo.name %></td>
                     <td>
-                        <img src="images/zapatillas/<%= articulo.image[0] %>">
+                         <img src="images/zapatillas/<%= articulo.images[0].url %>">
+                         <%# console.log(articulo.images[0]) %>  
                     </td>
                     <td><%= articulo.price %></td>
               </tr>

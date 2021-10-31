@@ -13,5 +13,8 @@ router.get("/sneakers/detail/:id", productsController.productDetail);
 router.get("/sneakers/:OrderBy/:FilterBy?", productsController.productsList);
 router.post("/sneakers/:OrderBy/:FilterBy?", productsController.productsList);
 
+router.get("/ofertas/:OrderBy/:FilterBy?", productsController.productsList);
+router.post("/ofertas/:OrderBy/:FilterBy?", productsController.productsList);
+
 
 module.exports = router;

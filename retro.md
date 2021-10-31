@@ -42,3 +42,14 @@
 * Hacer menos: Nada
 
 * Dejar de hacer: Dejar todo para ultimo momento!!!
+
+## SPRINT 5
+* Comenzar a hacer: -
+
+* Hacer más: mejor comunicación
+
+* Continuar haciendo: debatir ideas
+
+* Hacer menos: Nada
+
+* Dejar de hacer: Hacer las cosas en el limite de tiempo

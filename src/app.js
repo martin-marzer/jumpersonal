@@ -68,7 +68,7 @@ app.use((err, req, res, next) => {
 
 // arranca el servidor
 app.listen(PORT, () => {
-    console.log("funca bien pa, 3030 server personal");
+    console.log(`funca bien pa, ${PORT} server personal`);
 })
 
 

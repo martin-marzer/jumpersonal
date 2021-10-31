@@ -1,51 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <title>Home</title>
+    <title>Busqueda</title>
     <%- include("./partials/head") %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<link rel="stylesheet" href="/css/resultsbootstrap.css">
-	<link rel="stylesheet" href="/css/results.css">
+    <link rel="stylesheet" href="/css/results.css">
 </head>
 <body>
     <%- include("./partials/header") %>
-    
     <%- include("./partials/menuMobile") %>
-<main>
-    <div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Resultados de la búsqueda:  <%= searchUser %> </h2>
-                <h2 class="products-title">Productos:  <%=usersResults.length %> </h2>
-			</div>
-				<% for( let i = 0; i < usersResults.length; i++ ) { %>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<section class="product-box">
-							<a href="/sneakers/detail/<%=usersResults[i].id%>">
-								<figure class="product-box_image">
-									<img src="/images/zapatillas/<%=usersResults[i].image[0]%>" alt="imagen de producto">
-								</figure>
-								<article class="product-box_data">
-									<h2>$<%=toThousand(usersResults[i].price)%></h2>
-									<!-- <span><%#=(usersResults[i].discount)%>% OFF</span> -->
-									<p><%=(usersResults[i].name)%></p>
-								</article>
-							</a>
-						</section>
-					</div>
-				<% } %>
 
 
-			<div class="col-12">
-				<% if (usersResults == 0) { %>
-					<h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
-				<% } %>
-			</div>
-		</div>
-	</div>
-</main>
-<%- include("./partials/footer") %>
-<%- include("./partials/scripts") %>
+    <main>
+
+        <div id="jumpstore-page" >
+            <div class="container">
+                <div class="jumpstore-content">
+                    <div class="results">
+                        <div class="results-container">
+                            <p class="products-title"> Búsqueda:  <strong><%= searchUser %></strong> </p>
+                            <p> <strong><%= usersResults.length %></strong> Resultados</p>
+                        </div>
+                    </div>
+                    <div class="products">
+                        
+                        <div class="products-container">
+                            <%#= articulos.indexOf(articulo) + 1 %>
+                            <% usersResults.forEach(articulo => { %>
+                                <div class="product-container">
+                                    <a href="/sneakers/detail/<%= articulo.id %>" class="link-detail">
+                                        <div class="product">
+                                            <% if (articulo.discounts.active == true) { %>
+                                                <div class="sale">
+                                                    <div class="discount">
+                                                        <%= articulo.discounts.discountPercent %>% OFF
+                                                    </div>
+                                                </div>
+                                            <% } %>
+                                            
+                                            <div class="info-product">
+                                                <div class="img-container">
+                                                    <img src="/images/zapatillas/<%= articulo.images[0].url %>" alt="producto" class="img-product">
+                                                </div>
+                                                <div class="text">
+                                                    <div class="sneaker-name">
+                                                        <p><%= articulo.name %></p>
+                                                    </div>
+                                                    <div class="price">
+                                                        <% if (articulo.discounts.active == true) { %>
+                                                                <p>$<%= toThousand(articulo.price - (articulo.price * articulo.discounts.discountPercent / 100))%></p>
+                                                                <p class="oldPrice">$<%= toThousand(articulo.price)%></p>
+                                                        <% } else {%>
+                                                            <p>$<%= toThousand(articulo.price) %></p>
+
+                                                        <% } %>
+                                                    </div>                                     
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>  
+                            <% }); %>
+
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <% if (usersResults == 0) { %>
+                        <h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
+                    <% } %>
+                    </div> 
+            </div>
+        </div>
+
+
+    </main>
+    <%- include("./partials/footer") %>
+    <%- include("./partials/scripts") %>
+    <script src="/js/results.js"></script>
+
 </body>
 </html>

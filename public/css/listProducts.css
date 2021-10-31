@@ -29,6 +29,21 @@ body {
     height: 100%;
     position: relative;
 }
+.sale {
+    background-color: rgb(65, 105, 225);
+    border-radius: 100%;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    height: 10vw;
+    width: 10vw;
+    text-align: center;
+    padding: 1.5vw 0vw;
+    font-size: 3vw;
+    font-weight: bold;
+    left: 3vw;
+    top: 3vw;
+    z-index: 1;
+}
 .info-product {
     height: 100%;
 }
@@ -45,6 +60,15 @@ body {
 }
 .price {
     font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.price p {
+    width: 50%;
+}
+.price p.oldPrice  {
+    font-size: 3vw;
+    text-decoration: line-through;
 }
 
 /* filter menu mobile */ 
@@ -172,12 +196,22 @@ body {
         background-color: #ffff;
         width: 31%;
     }
+    .sale {
+        height: 7vw;
+        width: 7vw;
+        font-size: 1.8vw;
+        left: 2vw;
+        top: 2vw;
+    }
     .sneaker-name {
         font-size: 2.3vw;
         height: 50px;
     }
     .price {
         font-size: 3vw;
+    }
+    .price p.oldPrice  {
+        font-size: 2vw;
     }
     .select-results-flex {
         top: 4vw;
@@ -251,6 +285,12 @@ body {
     .img-container {
         height: 30vw;
     }
+    .price p {
+        width: 60%;
+    }
+    .price p.oldPrice {
+        width: 40%;
+    }
 }
 @media (min-width:768px) {
     .top-banner {
@@ -268,6 +308,14 @@ body {
         height: 250px;
         width: 100%;
     }
+    .sale {
+        height: 40px;
+        width: 40px;
+        padding: 9px 10px;
+        font-size: 11px;
+        left: 15px;
+        top: 15px;
+    }    
     .product-container:hover {
         -webkit-box-shadow: 0px 0px 20px -5px #000000;
         box-shadow: 0px 0px 20px -5px #000000;
@@ -288,6 +336,9 @@ body {
     }
     .price {
         font-size: 17px;
+    }
+    .price p.oldPrice  {
+        font-size: 13px;
     }
     .sidenav-filter .title-filter {
         margin-left: 45%;
@@ -333,7 +384,7 @@ body {
         border-radius: 0.5vw;
     }
     .sidenav-filter {
-        width: 80%; 
+        width: 55%;
     }
     .search-close-filter {
         height: 10.2vw;
@@ -517,6 +568,14 @@ body {
         margin-left: 7px;
         height: 270px;
     }
+    .sale {
+        height: 50px;
+        width: 50px;
+        padding: 8px 10px;
+        font-size: 14px;
+        left: 15px;
+        top: 15px;
+    }
     .img-container{
         height: 180px;
     }  
@@ -575,6 +634,9 @@ body {
     }
     .price {
         font-size: 22px;
+    }
+    .price p.oldPrice  {
+        font-size: 16px;
     }
     .filter-scroll {
         overflow-y: scroll;

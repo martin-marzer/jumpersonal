@@ -175,9 +175,7 @@ width: 100px;
     align-items: center;
     z-index: 99;
 }
-#delete_product{
-    background-color: #e73c37;
-}
+
 
 @media (max-width: 768px) {
     .encabezado_content{

@@ -3,6 +3,8 @@
     "id": 1,
     "name": "Air Jordan 1 Retro Low 'Lakers top 3",
     "price": 23000,
+    "discount": 20,
+    "priceFinal": 18400,
     "talle": "35-40",
     "brand": "nike",
     "image": [
@@ -11,12 +13,15 @@
       "airjordan1retro3.jpeg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 2,
     "name": "Nike AIRMAX 97",
     "price": 20600,
+    "discount": 0,
+    "priceFinal": 20600,
     "talle": "35-40",
     "brand": "nike",
     "image": [
@@ -25,12 +30,15 @@
       "airmax97-3.jpg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 3,
     "name": "Jordan 1 Retro High White University",
     "price": 22400,
+    "discount": 0,
+    "priceFinal": 22400,
     "talle": "35-40",
     "brand": "nike",
     "image": [
@@ -39,12 +47,15 @@
       "jordan1retro3.jpeg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 4,
     "name": "Jordan 5 Retro Grape Fresh Prince",
     "price": 22500,
+    "discount": 0,
+    "priceFinal": 22500,
     "talle": "35-40",
     "brand": "nike",
     "image": [
@@ -53,12 +64,15 @@
       "jordan5retro3.jpeg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 5,
     "name": "Jordan 11 Retro Win Like 96",
     "price": 23700,
+    "discount": 0,
+    "priceFinal": 23700,
     "talle": "35-40",
     "brand": "nike",
     "image": [
@@ -67,12 +81,15 @@
       "jordan11retro3.jpeg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 6,
     "name": "Adidas Yeezy 350v2 Black",
     "price": 20400,
+    "discount": 0,
+    "priceFinal": 20400,
     "talle": "35-40",
     "brand": "adidas",
     "image": [
@@ -81,12 +98,15 @@
       "Adidas Yeezyblack3.jpg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 7,
     "name": "Adidas Yeezy 350v2 White",
     "price": 20400,
+    "discount": 0,
+    "priceFinal": 20400,
     "talle": "35-40",
     "brand": "adidas",
     "image": [
@@ -95,12 +115,15 @@
       "Adidas Yeezy3.jpg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 8,
     "name": "Adidas X9000L4 CYBERPUNK 2077",
     "price": 20900,
+    "discount": 0,
+    "priceFinal": 20900,
     "talle": "35-40",
     "brand": "adidas",
     "image": [
@@ -109,12 +132,15 @@
       "adidascyberpunk3.jpeg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 9,
     "name": "Adidas X9000L4",
     "price": 20900,
+    "discount": 0,
+    "priceFinal": 20900,
     "talle": "35-40",
     "brand": "adidas",
     "image": [
@@ -123,12 +149,15 @@
       "Adidas X9000L4-3.jpeg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 10,
     "name": "Adidas Superstar Sean Wotherspoon",
     "price": 17200,
+    "discount": 0,
+    "priceFinal": 17200,
     "talle": "35-40",
     "brand": "adidas",
     "image": [
@@ -137,12 +166,15 @@
       "adidasSuperstar3.jpeg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 11,
     "name": "Adidas Superstar Melting Sadness",
     "price": 20200,
+    "discount": 0,
+    "priceFinal": 20200,
     "talle": "35-40",
     "brand": "adidas",
     "image": [
@@ -151,12 +183,15 @@
       "adidasmelting3.jpeg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 12,
     "name": "Fila archive RJV",
     "price": 12990,
+    "discount": 0,
+    "priceFinal": 12990,
     "talle": "35-40",
     "brand": "fila",
     "image": [
@@ -165,12 +200,15 @@
       "fila archive-3.jpg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 13,
     "name": "Fila Flex Shine",
     "price": 20200,
+    "discount": 0,
+    "priceFinal": 20200,
     "talle": "35-40",
     "brand": "fila",
     "image": [
@@ -179,12 +217,15 @@
       "fila flex3.jpg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 14,
     "name": "Fila Renno",
     "price": 19990,
+    "discount": 0,
+    "priceFinal": 19990,
     "talle": "35-40",
     "brand": "fila",
     "image": [
@@ -193,12 +234,15 @@
       "fila renno-3.jpg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 15,
     "name": "Fila Renno 90S",
     "price": 19990,
+    "discount": 0,
+    "priceFinal": 19990,
     "talle": "35-40",
     "brand": "fila",
     "image": [
@@ -207,12 +251,15 @@
       "fila renno90s-3.jpg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 16,
     "name": "Vans ERA",
     "price": 17900,
+    "discount": 0,
+    "priceFinal": 17900,
     "talle": "35-40",
     "brand": "vans",
     "image": [
@@ -221,12 +268,15 @@
       "vans era3.jpeg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 17,
     "name": "Vans Old Skool VLT LX",
     "price": 17900,
+    "discount": 0,
+    "priceFinal": 17900,
     "talle": "35-40",
     "brand": "vans",
     "image": [
@@ -235,24 +285,32 @@
       "vans oldskool vlt3.jpg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 18,
     "name": "Vans Old Skool Supreme",
     "price": 17900,
+    "discount": 0,
+    "priceFinal": 17900,
     "talle": "35-40",
     "brand": "vans",
     "image": [
       "vans oldskool supreme1.jpeg",
       "vans oldskool supreme2.jpeg",
       "vans oldskool supreme3.jpeg"
-    ]
+    ],
+    "date": "2021-08-25",
+    "stock": 1,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
     "id": 19,
     "name": "Vans Old Skool",
     "price": 18700,
+    "discount": 0,
+    "priceFinal": 18700,
     "talle": "35-40",
     "brand": "vans",
     "image": [
@@ -261,6 +319,24 @@
       "vans oldskool3.jpeg"
     ],
     "date": "2021-08-25",
+    "stock": 1,
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
+  },
+  {
+    "id": 20,
+    "name": "Samsung Galaxy S12",
+    "price": 30000,
+    "discount": 50,
+    "priceFinal": 15000,
+    "talle": "40-45",
+    "brand": "adidas",
+    "image": [
+      "product-1633498692623.jpg",
+      "product-1633498692695.jpg",
+      "product-1633498692709.jpg"
+    ],
+    "date": "2021-10-06",
+    "stock": 1,
+    "description": "Asdasdasd\r\nasdas"
   }
 ]

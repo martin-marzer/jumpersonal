@@ -44,6 +44,11 @@ i.fas.fa-exclamation-circle {
 .text-danger {
     color: #dc3545;
 }
+.psw-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 .formulario .field input:focus, .formulario .field button:focus {
     outline: 2px rgb(0, 0, 0);
 }
@@ -166,10 +171,9 @@ label.field {
         background-repeat: no-repeat;
     }
     .formulario {
-        background: rgb(255, 255, 255);
+        background: rgb(255, 255, 255, 0.9);
         padding: 5%;
         border-radius: 5px;
-        filter: opacity(0.9);
     }
     .img-form {
         display: none;

@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <title>Profile</title>
-    <%- include("./partials/head") %>
-    <link rel='stylesheet' href='/css/profile.css'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel='stylesheet' href='/css/profile.css'>
+    <%- include("./partials/head") %>
+
 
 </head>
 <body>
@@ -13,85 +13,96 @@
     <%- include("./partials/header") %>
     
     <%- include("./partials/menuMobile") %>
-    <div class="conatainer-all">
-        <div class="container emp-profile">
-        <form method="post">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="profile-img">
-                        <img src="/images/administrador/usuarioAdministrador.png">
-                        <div class="file btn btn-lg btn-primary">
-                            cambiar foto
-                            <input type="file" name="file"/>
-                        </div>
-                    </div>
+    <main>
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="/home">Home</a>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    
+                    <div class="card profile-margin-top-mobile">
+                <div class="card-header clearfix">
+                    <h2 class="pull-left profile-header">Perfil</h2>
+                    
+                        <a href="#" class="pull-right">Editar</a>
                 </div>
-                <div class="col-md-6">
-                    <div class="profile-head">
-                                <h5>
-                                    <%= user.username %>
-                                </h5>
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Datos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Compras</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <a class="profile-edit-btn"  href="/profile">Editar perfil</a> 
+                <div class="card-body">
+                    <dl>
+                        <dt>Nombre De Usuario</dt>
+                        <dd><%= user.username  %> </dd>
+                    </dl>
+                    <dl>
+                        <dt>Fecha de Creacion:</dt>
+                        <% let inputDate = user.createdAt.toISOString().split('T')[0];  %>
+                        <dd><%= inputDate  %></dd>
+                    </dl>
+                    
+                    <dl>
+                        <dt>Email</dt>
+                        <dd><%= user.email  %></dd>
+                    </dl>
+            
                 </div>
             </div>
-            <div class="row">
+            
+                    
+                        
+                        <div class="card">
+                <div class="card-header clearfix">
+                    <h2 class="pull-left">Contraseña</h2>
+                    <a href="#" class="pull-right" aria-label="Cambiar Contraseña">Editar</a>
+                </div>
+                <div class="card-body">
+                    <dl>
+                        <dt class="dashboard-info">Contraseña</dt>
+                        <dd>********</dd>
+                    </dl>
+                </div>
+            </div>
+            
+                    
+            
+                </div>
+                <div class="col-sm-6">
+                    
+                    
+                    
+                    <div class="card payment-card">
+                <div class="card-header clearfix">
+                    <h2 class="pull-left">Métodos de Pago</h2>
+                    
+                </div>
                 
-                <div class="col-md-8">
-                    <div class="tab-content profile-tab" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>nombre de usuario</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p><%= user.username %> </p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>categoria</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p><%= user.category %></p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Email</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p><%= user.email %></p>
-                                        </div>
-                                    </div>
-                                   
-                        </div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        </div>
-                    </div>
+                    <a href="#" class="add-new-card-btn">+Nueva Tarjeta</a>
+                
+                
+            </div>
+                    
+                    <div class="card">
+                <div class="card-header clearfix">
+                    <h2 class="pull-left">Direcciones</h2>
+                    
+                </div>
+                
+                    <a href="#" class="add-new-address-profile-btn">+ Nueva Dirección</a>
+    
+            </div>
+            
+            
+                    
+                    
+                    
+                    
                 </div>
             </div>
-        </form>           
         </div>
-    </div>
-
+    </main>
 
 
     <%- include("./partials/footer") %>
     <%- include("./partials/scripts") %>
 
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </body>
 </html>

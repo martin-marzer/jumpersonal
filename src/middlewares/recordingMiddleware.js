@@ -1,23 +1,26 @@
-const User = require("../database/models/User");
+const db = require("../database/models")
+const User = db.User
 
 function recordingMiddleware (req, res, next){
 
-    res.locals.isLogged = false;
-    
     let emailInCookie = req.cookies.recordame
-    let UserFromCookie = User.findByField("email", emailInCookie);
 
-    if(UserFromCookie){
-        req.session.userLogged = UserFromCookie;
+    if (emailInCookie != undefined) {
+        User.findOne ({
+            where: {
+                email: emailInCookie
+            }
+        })
+        .then(UserFromCookie => {
+            req.session.userLogged = UserFromCookie;
+            res.locals.usuario = req.session.userLogged;
+            next();
+        })
+
+
+    } else {
+        next();
     }
-
-    if(req.session.userLogged){
-        res.locals.isLogged = true;
-        res.locals.userLogged = req.session.userLogged;
-    }
-    //console.log(UserFromCookie)
-
-    next();
 }
 
 module.exports = recordingMiddleware;

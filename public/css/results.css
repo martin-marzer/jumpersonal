@@ -1,159 +1,276 @@
-
-
-html,
+/* el body chaval */
 body {
-  min-height: 100vh;
-  margin: 0;
-  font-size: 10px;
+  background-color: #f6f6f6;
 }
 
-body {
-  background-color: var(--light-gray);
+#jumpstore-page a {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
 }
-
-ul,
-ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.results {
+  top: 1vw;
 }
-
-a {
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-}
-
-figure {
-  margin: 0;
-  padding: 0;
-}
-
-img {
-  width: 100%;
-}
-
-input,
-textarea {
-  font-family: inherit;
-}
-
-
-
-.row {
-  justify-content: center !important;
-}
-
-
-/*====== Products ======*/
-.products-wrapper {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.products-title {
-  font-size: 2.4em;
-  font-weight: 400;
-  color: var(--gray);
-}
-
-.product-box {
-  background-color: #ffffff;
-  border-radius: 5px;
-  overflow: hidden;
-  transition: 300ms;
-  margin: 20px 0;
-}
-
-.product-box a {
-  display: block;
-}
-
-.product-box_image {
-  border-bottom: 1px solid var(--light-gray);
-}
-
-.product-box_data {
-  padding: 15px;
-  position: relative;
+.products-container {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
 }
-
-.product-box_data h2 {
-  font-size: 2.4em;
-  font-weight: 300;
-  margin: 0;
+.product-container{
+  position: relative;
+  outline: 1px solid #7e7e7e;
 }
-
-.product-box_data span {
-  font-size: 1.5em;
-  font-weight: 300;
-  color: var(--green);
-  margin: 0 0 0 10px;
-}
-
-.product-box_data p {
-  font-size: 1.5em;
+.product-container .link-detail {
+  display: block;
   width: 100%;
-  color: var(--gray);
-  margin: 0;
-  height: 0;
-  transition: 300ms;
-  overflow: hidden;
+  height: 100%;
 }
-
-.product-box_data i {
-  color: var(--green);
-  font-size: 1.8em;
-  width: 35px;
-  height: 35px;
-  text-align: center;
-  border: solid 1px;
-  border-radius: 50%;
+.product {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.sale {
+  background-color: rgb(65, 105, 225);
+  border-radius: 100%;
+  color: rgb(255, 255, 255);
   position: absolute;
-  top: -15px;
-  right: 15px;
-  background-color: #ffffff;
+  height: 10vw;
+  width: 10vw;
+  text-align: center;
+  padding: 1.5vw 0vw;
+  font-size: 3vw;
+  font-weight: bold;
+  left: 3vw;
+  top: 3vw;
+  z-index: 1;
+}
+.info-product {
+  height: 100%;
+}
+.img-container {
+  height: 75%;
+}
+.img-product {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+.sneaker-name {
+  text-transform: capitalize;
+}
+.price {
+  font-weight: 500;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: 300ms;
 }
-
-.product-box:hover {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+.price p {
+  width: 50%;
 }
-
-.product-box:hover p {
-  height: 40px;
-  margin-top: 15px;
-}
-
-.product-box:hover i {
-  transform: rotate(360deg);
-  box-shadow: 0 0 5px var(--green);
+.price p.oldPrice  {
+  font-size: 3vw;
+  text-decoration: line-through;
 }
 
 
 
-
-
-
-
-
-
-
-/*====== Media-Queries ======*/
-@media (min-width: 768px) {
-  .main-header_credit-link {
-    margin-top: 0;
-    text-align: right;
+@media (max-width:599px) {
+  .products-container {
+      justify-content: space-between;
+  } 
+  .product-container {  
+      max-width: 48%;
+      margin-bottom: 10%;
+      background-color: #ffff;
+      width: 48%;
+  }
+  .sneaker-name {
+      font-size: 3.5vw;
+      height: 12vw;
+  }
+  .price {
+      font-size: 4vw;
+  }
+  .img-container {
+      height: 40vw;
   }
 
-  .banner {
-    height: 320px;
+}
+@media (min-width:600px) {
+  .product-container {  
+    margin-right: 8px;
+    margin-left: 8px;
+    max-width: 30%;
+    margin-bottom: 6%;
+    background-color: #ffff;
+    width: 30%;
+  }
+  .sale {
+      height: 7vw;
+      width: 7vw;
+      font-size: 1.8vw;
+      left: 2vw;
+      top: 2vw;
+  }
+  .sneaker-name {
+      font-size: 2.3vw;
+      height: 50px;
+  }
+  .price {
+      font-size: 3vw;
+  }
+  .price p.oldPrice  {
+      font-size: 2vw;
+  }
+  .results {
+      top: 4vw;
+  }
+}
+@media (max-width:767px) {
+
+  body {
+      font-size: 3vw
   }
 
+  .results {
+      flex-direction: column;
+      background-color: #f3f3f3;;
+      padding-bottom: 2vw;
+  }
+  .results-container {
+      text-align: center;
+      border-bottom: .5px solid #cacaca;
+      border-top: .5px solid #cacaca;
+      margin: 20px 0;
+  }
+
+
+  .product-container {
+      -webkit-box-shadow: 0px 0px 20px -5px #000000;
+      box-shadow: 0px 0px 15px -5px #000000;
+  }
+  .text {
+      margin-top: -12%;
+      padding: 0 4vw;
+  }
+  
+
+}
+@media (max-width:767px) and (min-width:600px) {
+  .img-container {
+      height: 30vw;
+  }
+  .price p {
+      width: 60%;
+  }
+  .price p.oldPrice {
+      width: 40%;
+  }
+}
+@media (min-width:768px) {
+  .results-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid #cacaca;
+    padding: 10px;
+  }
+
+  .products-container {
+      margin-top: 30px;
+      width: 100%;
+  }
+  .product-container{
+      max-width: 23%;
+      margin-right: 7px;
+      margin-left: 7px;
+      margin-bottom: 5%;
+      height: 250px;
+      width: 100%;
+  }
+  .sale {
+      height: 40px;
+      width: 40px;
+      padding: 9px 10px;
+      font-size: 11px;
+      left: 15px;
+      top: 15px;
+  }    
+  .product-container:hover {
+      -webkit-box-shadow: 0px 0px 20px -5px #000000;
+      box-shadow: 0px 0px 20px -5px #000000;
+  }
+  .img-container{
+      height: 150px;
+  }
+  .text {
+      margin-top: -12%;
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+  .sneaker-name {
+      font-size: 13px;
+  }
+  .price {
+      font-size: 17px;
+  }
+  .price p.oldPrice  {
+      font-size: 13px;
+  }
+
+}
+
+@media (min-width:992px) {
+  #jumpstore-page {
+      margin: 50px 0;
+  }
+
+  .results-container p {
+      margin: 0;
+  }
+  
+  .product-container {
+      margin-right: 7px;
+      margin-left: 7px;
+      height: 270px;
+  }
+  .sale {
+      height: 50px;
+      width: 50px;
+      padding: 8px 10px;
+      font-size: 14px;
+      left: 15px;
+      top: 15px;
+  }
+  .img-container{
+      height: 180px;
+  }  
+  .product:hover .img-container img {
+      opacity: 0.5;
+  }
+  .img-container img {
+      transition: opacity 0.25s ease-out;
+  }
+  .text {
+      margin: -16% 10px 0 10px;
+  }
+  
+}
+
+@media (min-width:1200px) {
+  .product-container {
+      margin-right: 11px;
+      height: 330px;
+  }
+  .img-container{
+      height: 210px;
+  }
+  .sneaker-name {
+      font-size: 17px;
+      height: 60px;
+  }
+  .price {
+      font-size: 22px;
+  }
+  .price p.oldPrice  {
+      font-size: 16px;
+  }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Productos</title>
+    <title>Ofertas</title>
     <%- include("./partials/head") %>
     <link rel="stylesheet" href="/css/listProducts.css">
 </head>
@@ -11,8 +11,9 @@
     <div class="top-banner">
         <img src="/images/contenido-pagina/banner-top-jumpstore.jpg" alt="jumpstore-banner">
     </div>
-    
+
     <div class="sidenav-filter">
+    
         <div class="overlay-content-filter">
             <div class="search-close-filter">
                 <div class="title-filter">
@@ -286,58 +287,45 @@
                         
                         <div class="products-container">
                             <%#= articulos.indexOf(articulo) + 1 %>
-                            
                             <% articulos.forEach(articulo => { %>
-                                <div class="product-container">
-                                    <a href="/sneakers/detail/<%= articulo.id %>" class="link-detail">
-                                        <div class="product">
+                                    <div class="product-container">
+                                        <a href="/sneakers/detail/<%= articulo.id %>" class="link-detail">
+                                            <div class="product">
 
-                                            <% if (articulo.discounts.discountPercent != 0) { %>
-                                                <div class="sale">
-                                                    <div class="discount">
-                                                        <%= articulo.discounts.discountPercent %>% OFF
+                                                <% if (articulo.discounts.discountPercent != 0) { %>
+                                                    <div class="sale">
+                                                        <div class="discount">
+                                                            <%= articulo.discounts.discountPercent %>% OFF
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            <% } %>
-                                            
-                                            <div class="info-product">
-                                                <div class="img-container">
-                                                    <img src="/images/zapatillas/<%= articulo.images[0].url %>" alt="producto" class="img-product">
-                                                </div>
-                                                <div class="text">
-                                                    <div class="sneaker-name">
-                                                        <p><%= articulo.name %></p>
+                                                <% } %>
+                                                
+                                                <div class="info-product">
+                                                    <div class="img-container">
+                                                        <img src="/images/zapatillas/<%= articulo.images[0].url %>" alt="producto" class="img-product">
                                                     </div>
-                                                    <div class="price">
-                                                        <% if (articulo.discounts.discountPercent != 0) { %>
+                                                    <div class="text">
+                                                        <div class="sneaker-name">
+                                                            <p><%= articulo.name %></p>
+                                                        </div>
+                                                        <div class="price">
+                                                            <% if (articulo.discounts.discountPercent != 0) { %>
                                                                 <p>$<%= toThousand(articulo.price - (articulo.price * articulo.discounts.discountPercent / 100)) %></p>
                                                                 <p class="oldPrice">$<%= toThousand(articulo.price)%></p>
-                                                        <% } else {%>
-                                                            <p>$<%= toThousand(articulo.price) %></p>
+                                                            <% } else {%>
+                                                                <p>$<%= toThousand(articulo.price) %></p>
 
-                                                        <% } %>
-                                                    </div>                                             
+                                                            <% } %>
+                                                        </div>                                     
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </a>
-                                </div>  
+                                        </a>
+                                    </div>  
                             <% }); %>
 
                         </div>
                     </div>
-                    <!-- <div class="pagination-container">
-                        <form action="" method="GET">
-                            <div class="pagination">
-                                <a href="#">&laquo;</a>
-                                <a href="/prueba/OrderByReleaseDateASC?page=<%#= offsetData %>">1</a>
-                                <a class="active" href="/prueba/OrderByReleaseDateASC?page=2">2</a>
-                                <a href="/prueba/OrderByReleaseDateASC?page=3">3</a>
-                                <a href="#">&raquo;</a>
-                            </div>
-                        </form>
-                    </div> -->
-
                 </div>
             </div>
         </div>

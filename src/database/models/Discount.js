@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'User'; // esto debería estar en singular
+    let alias = 'Discount'; // esto debería estar en singular
     let cols = {
         id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
@@ -7,39 +7,40 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        username: {
-            type: dataTypes.STRING(20),
+        name: {
+            type: dataTypes.STRING(100),
             allowNull: false
         },
-        email: {
-            type: dataTypes.STRING(30),
-            allowNull: false,
-            unique: true
-        },
-        password: {
-            type: dataTypes.TEXT,
+        discountPercent: {
+            type: dataTypes.BIGINT(10),
             allowNull: false
         },
-        rol: {
+        active: {
             type: dataTypes.BOOLEAN,
             allowNull: false
         },
         createdAt: {
             type: dataTypes.DATE
         },
-        updatedAt: {
-            type: dataTypes.DATE,
-            allowNull: true
-        },
-         
+        modifiedAt: {
+            type: dataTypes.DATE
+        }
     };
     let config = {
         timestamps: true,
         createdAt: 'createdAt',
-        updatedAt: "updatedAt",
+        updatedAt: "modifiedAt",
         deletedAt: false
     }
-    const User = sequelize.define(alias, cols, config);
+    const Discount = sequelize.define(alias, cols, config);
 
-    return User
+    Discount.associate = function (models) {
+        Discount.hasOne(models.Product, {
+            as: "products",
+            foreignKey: "discountID"
+        })
+
+    }
+
+    return Discount
 };

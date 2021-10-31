@@ -4,6 +4,7 @@
 
     <title>Jumpstore</title>
     <%- include("./partials/head") %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
     <link rel='stylesheet' href='/css/home.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
 </head>
@@ -13,41 +14,55 @@
     <%- include("./partials/menuMobile") %>
 
     <main>
+        <div class="carousel">
+            <div class="splideHome">
+                <div class="splide__arrows">
+                    <button class="splide__arrow splide__arrow--prev arrow-splide-prev arrow-splide">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="splide__arrow splide__arrow--next arrow-splide-next arrow-splide">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <a href="/ofertas/OrderByReleaseDateASC">
+                                <img src="images/contenido-pagina/slider1.png" alt="Ofertas">
+                            </a>
+                        </li>
 
-        <div class="slider">
+                        <li class="splide__slide">
+                            <a href="/sneakers/OrderByReleaseDateASC/nike">
+                                <img src="images/contenido-pagina/slider2.png" alt="Travis Scoot">
+                            </a>
+                        </li>
 
-            <ul>
-                <li>
-                    <a href="/sneakers/OrderByReleaseDateDESC">
-                        <img src="images/contenido-pagina/slider1.png" alt="Ofertas">
-                    </a>
-                </li>
-                <li>
-                    <a href="/sneakers/OrderByReleaseDateDESC/nike">
-                        <img src="images/contenido-pagina/slider2.png" alt="Travis Scoot">
-                    </a>
-                </li>
-                <li>
-                    <a href="/sneakers/OrderByReleaseDateDESC/adidas">
-                        <img src="images/contenido-pagina/slider3.png" alt="Adidas yezzy">
-                    </a>
-                </li>
-                <li>
-                    <a href="/sneakers/OrderByReleaseDateDESC/fila">
-                        <img src="images/contenido-pagina/slider4.jpg" id="img-fila" alt="Fila">
-                    </a>
-                </li>
+                        <li class="splide__slide">
+                            <a href="/sneakers/OrderByReleaseDateASC/adidas">
+                                <img src="images/contenido-pagina/slider3.png" alt="Adidas yezzy">
+                            </a>
+                        </li>
 
-            </ul>
+                        <li class="splide__slide">
+                             <a href="/sneakers/OrderByReleaseDateASC/fila">
+                                <img src="images/contenido-pagina/slider4.jpg" id="img-fila" alt="Fila">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
+            </div>
         </div>
+
         <div class="wrapper">
             <h1 href="#">categorías destacadas</h1>
         </div>
         <div class="container-muestra">
             <ul class="ul-muestra">
                 <li>
-                    <a href="/sneakers/OrderByReleaseDateDESC/adidas"> 
+                    <a href="/sneakers/OrderByReleaseDateASC/adidas"> 
                         <p class="texto-muestra">New Adidas</p>
                         <div class="img-cont">
                             <img src="images/contenido-pagina/muestra1.png" >
@@ -56,7 +71,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/sneakers/OrderByReleaseDateDESC/nike">
+                    <a href="/sneakers/OrderByReleaseDateASC/nike">
                         <p class="texto-muestra">Nike ineditas</p>
                         <div class="img-cont">
                             <img src="images/contenido-pagina/muestra2.jpg">
@@ -79,22 +94,22 @@
     <div class="brands">
         <div class="brands-flex">
             <div class="brandImage-container">
-                <a href="/sneakers/OrderByReleaseDateDESC/adidas">
+                <a href="/sneakers/OrderByReleaseDateASC/adidas">
                     <img src="/images/contenido-pagina/adidas-logo.png" alt="adidas-logo">
                 </a>
             </div>
             <div class="brandImage-container">
-                <a href="/sneakers/OrderByReleaseDateDESC/nike">
+                <a href="/sneakers/OrderByReleaseDateASC/nike">
                     <img src="/images/contenido-pagina/jordan-logo.png" alt="jordan-logo">
                 </a>
             </div>
             <div class="brandImage-container">
-                <a href="/sneakers/OrderByReleaseDateDESC/fila">
+                <a href="/sneakers/OrderByReleaseDateASC/fila">
                     <img src="/images/contenido-pagina/fila-logo.png" alt="fila-logo">
                 </a>
             </div>
             <div class="brandImage-container">
-                <a href="/sneakers/OrderByReleaseDateDESC/vans">
+                <a href="/sneakers/OrderByReleaseDateASC/vans">
                     <img src="/images/contenido-pagina/vans-logo.png" alt="vans-logo">
                 </a>
             </div>
@@ -123,22 +138,23 @@
                     </div>
                     <div class="splide__track">
                         <ul class="splide__list">
+
                             <% for (let i = articulos.length -1 ; i > articulos.length - 5; i--) {%>
             
                                 <% let articulo = articulos[i] %>
-                            <li class="splide__slide">
-                                <a href="/sneakers/detail/<%= articulo.id %>">
-                                    <div class="image">
-                                        <img class="image__img" src="/images/zapatillas/<%= articulo.image[0] %>" alt="Vans old skool pink">
-                                        <div class="description-product">
-                                            <div class="image__title"><%= articulo.name %></div>
-                                            <p class="image__description">
-                                                $<%= articulo.price %>
-                                            </p>
+                                <li class="splide__slide">
+                                    <a href="/sneakers/detail/<%= articulo.id %>">
+                                        <div class="image">
+                                            <img class="image__img" src="/images/zapatillas/<%= articulo.images[0].url %>" alt="Vans old skool pink">
+                                            <div class="description-product">
+                                                <div class="image__title"><%= articulo.name %></div>
+                                                <p class="image__description">
+                                                    $<%= articulo.price %>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
+                                    </a>
+                                </li>
                             <% }; %>
 
                         </ul>
@@ -152,6 +168,7 @@
     <%- include("./partials/footer") %>
     <%- include("./partials/scripts") %>
     <script src="/js/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 </body>
 </html>

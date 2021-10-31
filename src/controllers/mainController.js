@@ -1,18 +1,28 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../database/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+
+const db = require("../database/models")
+const Products = db.Product
+
+const Op = db.Sequelize.Op
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const controlador = {
     index: (req,res) => {
-        res.render("home", {
-		articulos: products,
-		toThousand: toThousand
+		Products.findAll({
+			include: ["images"]
 		})
+		.then(allProducts => {
+			res.render("home", {
+				articulos: allProducts,
+				toThousand: toThousand
+				})
+		})
+
     },
     carrito: (req,res) => {
         res.render("carrito");
@@ -23,22 +33,33 @@ const controlador = {
 		let searchUser = req.query.keywords;
 		let normalizeSearch = searchUser.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
 		let finalSentence = normalizeSearch.toLowerCase();
-		//aca se guardan los datos que coinciden con la busqueda
-		let usersResults = [];
-		for (let i = 0; i < products.length; i++) {
-			//aca es para cambiar el text de los productos y sacarle mayus and tildes
-			let nameNormal = products[i].name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-			let nameNormalFinal = nameNormal.toLowerCase();
-			// si lo que puso  en el buscador coincide con algun producto
-			if (nameNormalFinal.includes(finalSentence) && (finalSentence.length != 0) ) {
-				usersResults.push(products[i]);
-			}		
+		let limited = 20
+		let searchs = {
+			name: {[Op.like]:  "%" + finalSentence + "%"}
 		}
-		res.render("results", {
-			searchUser: searchUser,
-			usersResults, usersResults,
-			toThousand: toThousand
-		});
+		if (finalSentence.length <= 0) {
+			limited = 0
+		}
+		else if (finalSentence.includes("nike")) {
+			searchs = {brandID: 3}
+		}
+		//aca se guardan los datos que coinciden con la busqueda
+
+		Products.findAll({
+			include: ['images', "stocks", "brands","discounts", "sizes"],
+			where: searchs,
+			limit: limited
+		})
+		.then(allProducts => {
+			res.render("results", {
+				searchUser: searchUser,
+				usersResults: allProducts,
+				toThousand: toThousand
+			});
+		})
+		.catch(error => res.send(error))
+
+
 	},
 	terminos: (req,res) => {
 		res.render("terminos")

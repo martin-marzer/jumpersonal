@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Zapatilla <%= articuloId.name %> </title>
+    <title>Zapatilla <%= articuloID.name %> </title>
     <%- include("./partials/head") %>
     <link rel="stylesheet" href="/css/detailProducts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
@@ -45,13 +45,13 @@
                                     
                                     <ul class="splide__list ">
                                         <li class="splide__slide">
-                                            <img src="/images/zapatillas/<%= articuloId.image[0] %> ">
+                                            <img src="/images/zapatillas/<%= articuloID.images[0].url %> ">
                                         </li>
                                         <li class="splide__slide">
-                                            <img src="/images/zapatillas/<%= articuloId.image[1] %> ">
+                                            <img src="/images/zapatillas/<%= articuloID.images[1].url %> ">
                                         </li>
                                         <li class="splide__slide">
-                                            <img src="/images/zapatillas/<%= articuloId.image[2] %> ">
+                                            <img src="/images/zapatillas/<%= articuloID.images[2].url %> ">
                                         </li>
                                     </ul>
                                 </div>
@@ -60,48 +60,57 @@
                             
                         </div>
                         <div id="description-product">
-                    
-                            <div class="product-title">
-                                <h1><%= articuloId.name %></h1>
-                            </div>
-                            <div class="product-price">
-                                <p>$<%= toThousand(articuloId.price) %></p>
-                            </div>
-                            <div class="product-cuotas">
-                                <p>Ver cuotas</p>
-                            </div>
-                            <div class="product-talle">
-                                <section class="form-talle">
-                                    <select name="talle" id="talle">
-                                        <option value="" disabled selected>Selecciona un talle</option>
-                                        <option value="35-40">35-40</option>>
-                                        <option value="40-45">40-45</option>                 
-                                    </select>
-                                </section>
-                            </div>
-                    
-                            <div class="product-carrito">
-                                <div class="field login">
-                                        <button type="submit">
-                                         <p>Agregar al Carrito</p>
-                                        </button>
+                            <form id="form-desktop" action="/carrito" method="GET">
+                                <div class="product-title">
+                                    <h1><%= articuloID.name %></h1>
                                 </div>
-                                <div class="field fav">
-                                    <a href="/">
-                                        <button type="button">
-                                            <i class="fas fa-heart"></i>
-                                        </button>
-                                    </a>
-                                </div>    
-                            </div>
-                    
-                            <div class="product-details">
-                                <h3>Descripción</h3>
-                                <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
-                                <div class="panel">
-                                    <p><%= articuloId.description %></p>
+                                <div class="product-price">
+                                    <% if (articuloID.discounts.active == true) { %>
+                                        <p>$<%= toThousand(articuloID.price - (articuloID.price * articuloID.discounts.discountPercent / 100)) %></p>
+                                        <p class="oldPrice">$<%= toThousand(articuloID.price)%></p>
+                                    <% } else {%>
+                                        <p>$<%= toThousand(articuloID.price) %></p>
+    
+                                    <% } %>
                                 </div>
-                            </div>
+                                <div class="product-cuotas">
+                                    <p>Ver cuotas</p>
+                                </div>
+                                <div class="product-talle">
+                                    <section class="form-talle">
+                                        <select name="talle" id="talle">
+                                            <option value="" disabled selected>Selecciona un talle</option>
+                                            <option value="35-40">35-40</option>>
+                                            <option value="40-45">40-45</option>                 
+                                        </select>
+                                    </section>
+                                </div>
+                        
+                                <div class="product-carrito">
+                                    <div class="field login">
+                                            <button type="submit">
+                                             <p>Agregar al Carrito</p>
+                                            </button>
+                                    </div>
+                                    <div class="field fav">
+                                        <a href="/">
+                                            <button type="button">
+                                                <i class="fas fa-heart"></i>
+                                            </button>
+                                        </a>
+                                    </div>    
+                                </div>
+                        
+                                <div class="product-details">
+                                    <h3>Descripción</h3>
+                                    <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
+                                    <div class="panel">
+                                        <p><%= articuloID.description %></p>
+                                    </div>
+                                </div>
+                            </form>
+
+                            
                         </div>
                     </div>
                     <div class="icons-data">
@@ -117,18 +126,41 @@
 
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <button class="close">&times;</button>
-                                        <p>Cuotas sin interés</p>
-                                        <br>
-                                        <i class="far fa-credit-card"></i>
-                                        <br>
-                                        
-                                        <p>Comprá en 3 y 6 cuotas sin interés con tarjetas VISA - MASTER - AMEX Y NARANJA.
+                                        <div class="container-modal">
+                                            <div class="container-close">
+                                                <button class="close">&times;</button>
+                                            </div>
+    
+                                            <div class="container-title">
+                                                <p>Cuotas sin interés</p>
+                                            </div>
+    
+                                            <br>
+    
+                                            <div class="container-icon">
+                                                <i class="far fa-credit-card"></i>
+                                            </div>
+    
+                                            <br>
+                                            
+                                            <div>
+                                                <p>Comprá en 3 y 6 cuotas sin interés con tarjetas VISA - MASTER - AMEX Y NARANJA.
+                                                </p>
+                                                <p>
+                                                    Aprovechá 12 cuotas sin interés en seleccionados (No incluye linea Heritage)
+                                                </p>
 
-                                        </p>
-                                        <p>
-                                            Comprar en nuestra Tienda Oficial es 100% seguro, todas las compras son procesadas mediante la plataforma de pago Mercado Pago.
-                                        </p>
+                                                <p>
+                                                    Tarjeta Naranja 3 cuotas sin interés
+                                                </p>
+
+                                                <p>
+                                                    Comprar en nuestra Tienda Oficial es 100% seguro, todas las compras son procesadas mediante la plataforma de pago Mercado Pago.
+                                                </p>
+                                            </div>
+                                        </div>
+
+
                                     </div>
 
                                 </div>
@@ -146,17 +178,35 @@
                                 <div class="myModal" class="modal">
 
                                     <!-- Modal content -->
+
                                     <div class="modal-content">
-                                        <button class="close">&times;</button>
-                                        <p>Cambios y devoluciones</p>
-                                        <br>
-                                        <i class="fas fa-box-open"></i>
-                                        <br>
-                                        <p>¿El talle no fue el indicado? No te preocupes, podes realizar el cambio y el primero no tiene costo.
-                                        </p>
-                                        <p>
-                                            Para empezar con el proceso, te pedimos que completes el formulario en www.jumpstore.com/contacts con la información necesaria para realizar el cambio y a la brevedad nos vamos a comunicar con vos. Una vez completado el formulario, dentro de los próximos días hábiles pasará el correo por tu domicilio a retirar el pedido. Si tu domicilio es en AMBA el plazo de retiro será máximo de 7 días hábiles y para el resto del país un plazo máximo de 10 días hábiles. Recordá que la prenda debe estar en la mismas condiciones que fue enviada, en lo posible dentro de su packaging original para protegerla. Cuando el producto llegue a nuestro Centro de Distribución realizaremos la gestión solicitada. ¡No te preocupes! Te mantendremos al tanto sobre la gestión vía mail.
-                                        </p>
+                                        <div class="container-modal">
+                                            <div class="container-close">
+                                                <button class="close">&times;</button>
+                                            </div>
+    
+                                            <div class="container-title">
+                                                <p>Cambios y devoluciones</p>
+                                            </div>
+    
+                                            <br>
+    
+                                            <div class="container-icon">
+                                                <i class="fas fa-box-open"></i>
+                                            </div>
+    
+                                            <br>
+                                            
+                                            <div>
+                                                <p>¿El talle no fue el indicado? No te preocupes, podes realizar el cambio y el primero no tiene costo.
+                                                </p>
+                                                <p>
+                                                    Para empezar con el proceso, te pedimos que completes el formulario en www.jumpstore.com/contacts con la información necesaria para realizar el cambio y a la brevedad nos vamos a comunicar con vos. Una vez completado el formulario, dentro de los próximos días hábiles pasará el correo por tu domicilio a retirar el pedido. Si tu domicilio es en AMBA el plazo de retiro será máximo de 7 días hábiles y para el resto del país un plazo máximo de 10 días hábiles. Recordá que la prenda debe estar en la mismas condiciones que fue enviada, en lo posible dentro de su packaging original para protegerla. Cuando el producto llegue a nuestro Centro de Distribución realizaremos la gestión solicitada. ¡No te preocupes! Te mantendremos al tanto sobre la gestión vía mail.
+                                                </p>
+                                            </div>
+                                        </div>
+
+
                                     </div>
 
                                 </div>
@@ -175,29 +225,46 @@
 
                                     <!-- Modal content -->
                                     <div class="modal-content">
-                                        <button class="close">&times;</button>
-                                        <p>Envios gratis ($10000)</p>
-                                        <br>
-                                        <i class="fas fa-truck"></i>
-                                        <br>
-                                        <p>Plazos de entrega:
-                                        </p>
+                                        <div class="container-modal">
+                                            <div class="container-close">
+                                                <button class="close">&times;</button>
+                                            </div>
+    
+                                            <div class="container-title">
+                                                <p>Envios gratis ($10000)</p>
+                                            </div>
+    
+                                            <br>
+    
+                                            <div class="container-icon">
+                                                <i class="fas fa-truck"></i>
+                                            </div>
+    
+                                            <br>
+                                            
+                                            <div>
+                                                <p>Plazos de entrega:
+                                                </p>
+        
+                                                <p>
+                                                    •  AMBA:
+                                                </p>
+        
+                                                <p>
+                                                    Contamos con Envío en 24 hs seleccionando Moto prioritario, exclusivo CABA. Si seleccionas Moto Mensajería: 1 a 4 días hábiles. Andreani domicilio o sucursal: 2 a 5 días hábiles. En caso de seleccionar Retiro en locales el plazo de entrega es de 3 a 5 días hábiles.
+                                                </p>
+        
+                                                <p>
+                                                    • INTERIOR de 2 a 7 días hábiles.
+                                                </p>
+        
+                                                <p>
+                                                    • PATAGONIA Y NOA  de 3 a 12 días hábiles.
+                                                </p>
+                                            </div>
+                                        </div>
 
-                                        <p>
-                                            •  AMBA:
-                                        </p>
 
-                                        <p>
-                                            Contamos con Envío en 24 hs seleccionando Moto prioritario, exclusivo CABA. Si seleccionas Moto Mensajería: 1 a 4 días hábiles. Andreani domicilio o sucursal: 2 a 5 días hábiles. En caso de seleccionar Retiro en locales el plazo de entrega es de 3 a 5 días hábiles.
-                                        </p>
-
-                                        <p>
-                                            • INTERIOR de 2 a 7 días hábiles.
-                                        </p>
-
-                                        <p>
-                                            • PATAGONIA Y NOA  de 3 a 12 días hábiles.
-                                        </p>
                                     </div>
 
                                 </div>
@@ -248,8 +315,7 @@
                             <li class="attribute-values">
                                 <p>
                                     <span class="label">Marca:</span>
-                                    
-                                    <%= articuloId.brand.toUpperCase() %>
+                                    <%= articuloID.brands.name.toUpperCase() %>
                                     
                                 </p>
                             </li>

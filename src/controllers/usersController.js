@@ -2,8 +2,11 @@ const { validationResult } = require("express-validator")
 const fs = require('fs');
 const path = require("path")
 const bcrypt = require('bcryptjs');
-const usersFilePath = path.resolve(__dirname, '../database/users.json');
-const User = require("../database/models/User");
+
+    
+const db = require("../database/models")
+
+const User = db.User
 
 const controlador = {
     register: (req,res) => {
@@ -11,30 +14,25 @@ const controlador = {
     },
     processRegister: (req,res) => {
         const resultValidation = validationResult(req);
-        let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        
+        let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
         if (resultValidation.errors.length > 0) {
             res.render("register", {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
-        }
-        else {
-            let infoUser = req.body
-            let lastID = users[users.length -1].id;
+        } else {
+            User.create({
+                username: req.body.username,
+                email: req.body.email,
+                password: encryptedPassword,
+                rol: 2
+            })
+            .then(user => {
+                req.session.userLogged = user;
 
-            let newUser = {
-                id: lastID + 1,
-                username: infoUser.username,
-                email: infoUser.email,
-                password: bcrypt.hashSync(infoUser.password, 10),
-                category: "user"
-            }
-            let newJSON = users.concat(newUser);
-            let userJSON = JSON.stringify(newJSON, null, 2);
-
-            fs.writeFileSync( usersFilePath, userJSON);
-            res.redirect("/login")
+                return res.redirect("/");
+            })
+            .catch(error => res.send(error))
         }
     },
     
@@ -42,28 +40,34 @@ const controlador = {
         res.render("login");
     },
     loginProcess: (req,res) => {
-       let userToLogin = User.findByField("email", req.body.email);
-       if(userToLogin) {
-           let verifiquePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
-        if (verifiquePassword){
-            delete userToLogin.password
-            req.session.userLogged = userToLogin;
-            if(req.body.recordame != undefined){
-                res.cookie('recordame',userToLogin.email,{maxAge: 1000 * 60 * 60 * 24})
-              }
-              // console.log("prueba", req.body.recordame)
-            return res.redirect("/profile")
-        }
-       }
-      
-      
-       return res.render("login", {
-           errors: {
-               email: {
-                   msg:"Encontramos datos erroneos"
-               }
-           }
-       })
+        const resultValidation = validationResult(req);
+        User.findOne ({
+            where: {
+                email: req.body.email
+            }
+        })
+        .then(userToLogin => {
+
+            if(userToLogin) {
+                let verifiquePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
+             if (verifiquePassword){
+                 delete userToLogin.password
+                 req.session.userLogged = userToLogin;
+                 if(req.body.recordame != undefined){
+                     res.cookie('recordame',userToLogin.email,{maxAge: 1000 * 60 * 60 * 24})
+                   }
+                 return res.redirect("/profile")
+             }
+            }
+                     
+            return res.render("login", {
+                errors: resultValidation.mapped(),
+                errorsGeneral: {
+                    msg:"Hubo un problema con su inicio de sesión"
+                },
+                oldData: req.body
+            })
+        })
     },
     logout: (req,res) =>{
         req.session.destroy();

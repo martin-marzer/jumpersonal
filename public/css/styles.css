@@ -57,7 +57,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     color: rgb(255, 255, 255);
 }
 
-.row {
+.row-jumpstore {
     margin-right: -15px;
     margin-left: -15px;
 }
@@ -156,53 +156,39 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 .jumpstore-search-mobile{
-    position: absolute;
     width: 100%;
-    height: 60px;
-    display: flex;
-    z-index: 2;
     align-items: center;
-    overflow: hidden;
-    background-color: #121212;
-    transition: all .25s ease;
-    opacity: 0;
-    pointer-events: none;
+    height: 10vw;
+    background-color: rgb(255, 255, 255);
 }
-.jumpstore-search-mobile.open {
-    opacity: 1;
-    pointer-events: all;
-}
+
 #jumpstore-box-mobile {
     width: 100%;
-    padding-left: 5%;
+    height: 100%;
 }
 #jumpstore-box-mobile .form-search {
     display: flex;
     align-items: center;
     width: 100%;
+    height: 100%;
+    padding: 0 5%;
 }
 .form-search .fulltext-search-box {
     width: 100%;
-    font-size: 4vw;
-}
-.form-search .btn-buscar, .form-search .fulltext-search-box, .closebtn {
-    background: transparent;
+    height: 100%;
     border: none;
     outline: none;
-    color: #fff;
+    font-size: 4vw;
 }
 
 .form-search .fulltext-search-box::placeholder {
     color: rgb(204, 203, 203);
 }
-.closebtn {
-    font-size: 11vw;
-    margin-bottom: 1vw;
-    padding-right: 5%;
-}
+
 .form-search .btn-buscar {
-    font-size: 6vw;
-    margin-right: 5%;
+    font-size: 5vw;
+    border: none;
+    background: transparent;
 }
 
 
@@ -265,19 +251,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* The side navigation menu */
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 80%; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 9999; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: -100%;
-  background-color: #f3f3f3;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: all .5s ease; /* 0.5 second transition effect to slide in the sidenav */
+    height: 80vw;
+    width: 100%;; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Stay on top */
+    top: -100%; /* Stay at the top */
+    left: 0;
+    background-color: #f3f3f3;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: all .5s cubic-bezier(0, 0, 0.2, 1); /* 0.5 second transition effect to slide in the sidenav */
   
 }
 .sidenav.open-menu {
-    left: 0;
+    top: 0;
 }
 
 .overlay-content {
@@ -291,23 +277,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* The navigation menu links */
 .overlay-content .links a {
-    padding: 7% 10%;
+    padding: 5% 2%;
     text-decoration: none;
     font-size: 5vw;
     display: block;
     transition: 0.5s;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #000 ;
-    border-left: 8px solid transparent
+    font-weight: 600;
+    color: #000;
+    width: 95%;
+    border-bottom: 1px solid #7a7a7a;
+    margin: 0 auto;
 }
 .overlay-content .links a:hover {
     text-decoration-line: underline ;
-}
-.selected-mobile {
-    background: #e6e1e1;
-    color: #111111 !important;
-    border-left: #212020 8px solid !important;
 }
 
 
@@ -338,24 +320,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     padding: 2vw 0;
     align-items: center;
     list-style: none;
-    background-color: #212020;
+    background-color: #f3f3f3;
 }
 .nav-user ul .icon-admin {
     padding: 0 5%;
     order: -1;
     width: 20%;
+    text-align: center;
 }
 .nav-user ul i{
-    color: rgb(255, 255, 255);
+    color: rgb(18 18 18);
     font-size: 7vw;
 }
 .nav-user li.user-item {
     margin: 2vw;
     font-size: 4vw;
     width: 30%;
+    text-align: center;
 }
 
-
+.nav-user li.user-item a {
+    color: rgb(18 18 18);
+}
 /* footer */
 
 
@@ -495,7 +481,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         position: sticky;
         position: -webkit-sticky;
         top: 0;
-        z-index: 999;
+        z-index: 9999;
     }
     #jumpstore-header-flex {
         align-items: center;
@@ -511,7 +497,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-search, #jumpstore-nav {
         display: none !important;
     }
-    #jumpstore-user, #jumpstore-cart,#jumpstore-admin  {
+    #jumpstore-user, #jumpstore-admin  {
         display: none;
     }
     #jumpstore-logo {
@@ -575,6 +561,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
     }
+    .sidenav {
+        height: 60vw;
+    }
+    .footer-modal .nav-user ul {
+        padding: 1vw 0;
+    }
+    .overlay-content .links a {
+        padding: 3% 2%;
+        font-size: 4vw;
+    } 
+    .nav-user ul i {
+        font-size: 5vw;
+    }
     .button-scroll {
         width: 8vw;
         height: 8vw;
@@ -622,9 +621,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         justify-content: flex-end;
 
     }
-    #jumpstore-search-btn {
-        display: none;
-    }
     
     #jumpstore-cart button, #jumpstore-user button, #jumpstore-admin button{
         font-size: 30px;
@@ -652,7 +648,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
     #jumpstore-navbar-mobile {
         display: none !important;
-    }    
+    }   
+    .sidenav {
+        height: 120vw;
+    } 
     #opacity-mobile {
         display: none !important;
     }

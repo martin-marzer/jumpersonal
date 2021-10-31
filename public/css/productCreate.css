@@ -6,7 +6,6 @@ body {
 .formulario-register {
     margin: 50px 25%;
     padding: 20px 8%;
-    background-color: #FFFF;
     border-radius: 2%;
     box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
     background: #b7c6dfed;
@@ -21,6 +20,7 @@ label{
 .selects {
     display: flex;
     margin-bottom: 30px;
+    justify-content: space-between;
 }
 #select-talles, #select-marcas {
     width: 90%;
@@ -41,6 +41,10 @@ label{
     background: whitesmoke;
     border: none;
     border-radius: 10px;
+}
+.price-discount {
+    width: 48%;
+    margin: 0;
 }
 .marcas label input{
     display: inline-block;

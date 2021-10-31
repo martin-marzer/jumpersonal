@@ -4,21 +4,11 @@
 
         <div class="container">
 
-            <div class="row">
+            <div class="row-jumpstore">
 
                 <div id="jumpstore-header-flex">
 
-                    <div class="jumpstore-search-mobile">
-                        <form action="/search" method="GET" id="jumpstore-box-mobile">
-                            <div class="form-search">
-                                <button  type="submit" class="btn-buscar">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                                <input class="fulltext-search-box" type="text" name="keywords" placeholder="Buscar">
-                            </div>
-                        </form>
-                        <button class="closebtn">&times;</button>
-                    </div>
+
 
                     <div id="jumpstore-menu-mobile">
                         <button class="btn-menu">
@@ -34,7 +24,9 @@
 
                     <div id="jumpstore-search">
                         <form action="/search" method="GET" id="jumpstore-box">
-                            <input class="fulltext-search-box" type="text" name="keywords" placeholder="Buscar">
+                            <input class="fulltext-search-box" type="text" name="keywords" placeholder="Buscar"
+                            value = "<%= locals.searchUser ? searchUser : null %>" 
+                            >
                             <button  type="submit" class="btn-buscar">
                                 <i class="fas fa-search"></i>
                             </button>
@@ -62,8 +54,8 @@
                                 <a href="/carrito" class="icono"><i class="fas fa-shopping-cart"></i></a>
                             </button>
                         </div>
-                        <% if (locals.usuario && locals.usuario.category == "admin") { %>
-                            <%# console.log(locals.usuario); %>
+                        <% if (locals.usuario && locals.usuario.rol == true) { %>
+
                             <div id="jumpstore-admin">
                                 <button>
                                     <a href="/administrator" class="icono"><i class="fas fa-user-cog"></i></a>
@@ -71,11 +63,6 @@
                             </div>
                             <% } %>
 
-                        <div id="jumpstore-search-btn">
-                            <button>
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
                         
                     </div>
                     
@@ -90,11 +77,11 @@
 
     <nav id="jumpstore-navbar">
     <div class="container">
-        <div class="row">
+        <div class="row-jumpstore">
             <ul>
                 <li><a href="/">Inicio</li></a>
-                <li><a href="/sneakers/OrderByReleaseDateDESC">Productos</li></a>
-                <li><a href="/">Ofertas</li></a>
+                <li><a href="/sneakers/OrderByReleaseDateASC">Productos</li></a>
+                <li><a href="/ofertas/OrderByReleaseDateASC">Ofertas</li></a>
                 <li><a href="/login">Favoritos</li></a>
             </ul>
         </div>
@@ -102,3 +89,15 @@
     </nav>
 
 </header>
+            <div class="jumpstore-search-mobile">
+                <form action="/search" method="GET" id="jumpstore-box-mobile">
+                    <div class="form-search">
+                        <input class="fulltext-search-box" type="text" name="keywords" placeholder="Buscar..."
+                        value = "<%= locals.searchUser ? searchUser : null %>" 
+                        >
+                        <button  type="submit" class="btn-buscar">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>

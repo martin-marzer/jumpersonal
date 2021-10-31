@@ -10,87 +10,89 @@
     <%- include("./partials/menuMobile") %>
 
     <main class="container_main">
-        <form class="formulario-edit" method="POST" action="/products/edit/<%= articulo.id %>?_method=PUT">
-            <h1 class="titulo">Editando <%= articulo.name %></h1>
-            <div>
-                <input class="formulario-input" type="text" name="name" class="cambiar-producto" value="<%= articulo.name %>" placeholder="Nuevo nombre" required>
-            </div>
-            <div>
-                <label for="fecha">Fecha de entrada:</label>
-                <input class="formulario-input" type="date" name="date" id="fecha" class="cambiar-producto" value="<%= articulo.date %>"  min="2021-01-01" max="2022-01-01" required>
-            </div>
-            <div class="selects">
-                <div class="talles">
-                    <select id="select-talles" name="talle" required>
-                        <option value="35-37"
-                        <% if (articulo.talle == "35-37") { %>
-                            selected
-                            <% } %>
-                        >35-37</option>
-                        <option value="38-40"
-                        <% if (articulo.talle == "38-40") { %>
-                            selected
-                            <% } %>
-                        >38-40</option>
-                        <option value="41-43"
-                        <% if (articulo.talle == "41-43") { %>
-                            selected
-                            <% } %>
-                        >41-43</option>
-                        <option value="44-35"
-                        <% if (articulo.talle == "44-35") { %>
-                            selected
-                            <% } %>
-                        >44-35</option>
-                    </select>
+        <div class="forms-container">
+            <form id="delete-form" method="POST" action="/products/delete/<%= articulo.id %>?_method=DELETE">
+                <button type="submit" id="delete_product" class="add_edit_product">Borrar Producto</button>
+            </form>
+
+            <form class="formulario-edit" method="POST" action="/products/edit/<%= articulo.id %>?_method=PUT">
+                <a href="/administratorToolsProducts">Volver</a>
+                <h1 class="titulo">Editando <%= articulo.name %></h1>
+                <div>
+                    <input class="formulario-input" type="text" name="name" class="cambiar-producto" value="<%= articulo.name %>" placeholder="Nuevo nombre" required>
                 </div>
-                <div class="marcas">
-                    <select id="select-marcas" name="brand" required>
-                        <option value="adidas"
-                        <% if (articulo.brand == "adidas") { %>
-                            selected
-                            <% } %>
-                        >Adidas</option>
-
-                        <option value="fila"
-                        <% if (articulo.brand == "fila") { %>
-                            selected
-                            <% } %>
-                        >Fila</option>
-
-                        <option value="nike"
-                        <% if (articulo.brand == "nike") { %>
-                            selected
-                            <% } %>
-                        >Nike</option>
-
-                        <option value="vans"
-                        <% if (articulo.brand == "vans") { %>
-                            selected
-                            <% } %>
-                        >Vans</option>
-
-                    </select>
+    
+                <div>
+                    <label for="fecha">Fecha de entrada:</label>
+                    <% let inputDate = articulo.createdAt.toISOString().split('T')[0];  %>
+                    <input class="formulario-input" type="date" name="fechaEntrada" id="fecha" class="cambiar-producto" value="<%= inputDate %>"  min="2021-01-01" max="2022-01-01" required>
                 </div>
-
-            </div>
-            <div>
-                <input class="formulario-input" min="0" step="1000" type="number" name="price" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
-            </div>
-           <!-- <div class="file-upload">
-                <input class="file-upload__input" type="file" for="myFile" name="myFile" id="myFile" required multiple>
-                <button class="file-upload__button" type="button">Imagen del producto</button>
-                <span class="file-upload__label"></span>
-            </div>  -->
-            <div class="col-12">
-                <label for="description" class="form-label">Descripción:</label>
-                <textarea name="description" id="description" class="descripcion" required ><%= articulo.description %></textarea>
-            </div>
-            <section class="wrapper">
-                <button type="submit" class="add_edit_product">Guardar Datos</button>
-                <button type="reset" class="add_edit_product">Borrar Datos</button>
+    
+                <div class="selects">
+                    <div class="talles">
+                        <select id="select-talles" name="talle" required>
+                            <option value="1"
+                            <% if (articulo.sizes[0].name == "35-40") { %>
+                                selected
+                                <% } %>
+                            >35-40</option>
+                            <option value="2"
+                            <% if (articulo.sizes[0].name == "40-45") { %>
+                                selected
+                                <% } %>
+                            >40-45</option>
+                        </select>
+                    </div>
+                    <div class="marcas">
+                        <select id="select-marcas" name="marca" required>
+                            
+                            <option value="1"
+                            <% if (articulo.brands.name == "adidas") { %>
+                                selected
+                                <% } %>
+                            >Adidas</option>
+    
+                            <option value="2"
+                            <% if (articulo.brands.name == "fila") { %>
+                                selected
+                                <% } %>
+                            >Fila</option>
+    
+                            <option value="3"
+                            <% if (articulo.brands.name == "nike") { %>
+                                selected
+                                <% } %>
+                            >Nike</option>
+    
+                            <option value="4"
+                            <% if (articulo.brands.name == "vans") { %>
+                                selected
+                                <% } %>
+                            >Vans</option>
+    
+                        </select>
+                    </div>
+    
+                </div>
+    
+                <div class="selects">
+                    <input class="formulario-input price-discount" min="0" step="1000" type="number" name="precio" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
+                    <input class="formulario-input price-discount" type="number"  min="0" max="100" value="<%= articulo.discount %>" name="descuento" class="crear-producto" placeholder="Descuento" required>
+                </div>
+    
+                <div class="col-12">
+                    <label for="description" class="form-label">Descripción:</label>
+                    <textarea name="descripcion" id="description" class="descripcion" required ><%= articulo.description %></textarea>
+                </div>
+    
+                <section class="wrapper">
+                    <button type="submit" class="add_edit_product">Guardar Datos</button>
+                    <button type="reset" class="add_edit_product">Borrar Datos</button>
                 </section>
             </form>
+        </div>
+        
+
     </main>
     <%- include("./partials/scripts") %>
     <script src="/js/edit-CreateProduct.js"></script>
