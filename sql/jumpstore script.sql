@@ -37,95 +37,53 @@ values (default, "35-40", default), (default, "40-45", default)
 ;
 
 
-DROP TABLE IF EXISTS jumpstore.stocks;
-
-CREATE TABLE jumpstore.stocks (
-	ID INT(10) NOT NULL auto_increment,
-	quantity int(10) NOT NULL,
-	createdAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
-	modifiedAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
-	CONSTRAINT stocks_pk PRIMARY KEY (ID)
-)
-ENGINE=InnoDB
-DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_general_ci;
-
-insert into jumpstore.stocks
-values (default, "1", default, default)
-;
-
-
-DROP TABLE IF EXISTS jumpstore.discounts;
-
-CREATE TABLE jumpstore.discounts (
-	ID INT(10) NOT NULL auto_increment,
-	name varchar(100) NOT NULL,
-	discountPercent INT(10) NOT null,
-	active boolean not null,
-	createdAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
-	modifiedAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
-	CONSTRAINT stocks_pk PRIMARY KEY (ID)
-)
-ENGINE=InnoDB
-DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_general_ci;
-
-insert into jumpstore.discounts
-values (default, "sin descuento", 0, false, default, default), (default, "20%", 20, true, default, default) 
-;
-
-
-
 DROP TABLE IF EXISTS jumpstore.products;
 
 CREATE TABLE jumpstore.products (
 	ID INT(10) NOT NULL auto_increment,
 	name varchar(100) NOT NULL,
 	price int(10) NOT null,
-	discountID INT(10) NOT null,
+	discount INT(10) NOT null,
 	brandID INT(10) NOT null,
 	createdAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
 	updatedAt timestamp NULL DEFAULT NULL,
-	stockID INT(10) NOT null,
+	quantity int(10) NOT NULL,
 	description text NOT NULL,
 	CONSTRAINT products_pk PRIMARY KEY (ID),
-	CONSTRAINT products_FK FOREIGN KEY (discountID) REFERENCES jumpstore.discounts(ID),
-	CONSTRAINT products_FK_1 FOREIGN KEY (brandID) REFERENCES jumpstore.brands(ID),
-	CONSTRAINT products_FK_2 FOREIGN KEY (stockID) REFERENCES jumpstore.stocks(ID)
+	CONSTRAINT products_FK FOREIGN KEY (brandID) REFERENCES jumpstore.brands(ID)
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_general_ci;
 
 insert into jumpstore.products
-values (default, "Air Jordan 1 Retro Low 'Lakers top 3", 23000, 2, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Nike AIRMAX 97", 20600, 1, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Jordan 1 Retro High White University", 22400, 1, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Jordan 5 Retro Grape Fresh Prince", 22500, 1, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Jordan 11 Retro Win Like 96", 23700, 1, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+values (default, "Air Jordan 1 Retro Low 'Lakers top 3", 23000, 0, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Nike AIRMAX 97", 20600, 0, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Jordan 1 Retro High White University", 22400, 0, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Jordan 5 Retro Grape Fresh Prince", 22500, 0, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Jordan 11 Retro Win Like 96", 23700, 0, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 
-(default, "Adidas Yeezy 350v2 Black", 20400, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Adidas Yeezy 350v2 White", 20400, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Adidas X9000L4 CYBERPUNK 2077", 20900, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Adidas X9000L4", 20900, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Adidas Superstar Sean Wotherspoon", 17200, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Adidas Superstar Melting Sadness", 20200, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas Yeezy 350v2 Black", 20400, 0, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas Yeezy 350v2 White", 20400, 0, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas X9000L4 CYBERPUNK 2077", 20900, 0, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas X9000L4", 20900, 0, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas Superstar Sean Wotherspoon", 17200, 0, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas Superstar Melting Sadness", 20200, 0, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 
-(default, "Fila archive RJV", 12990, 1, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Fila Flex Shine", 20200, 1, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Fila Renno", 19990, 1, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Fila Renno 90S", 19990, 1, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Fila archive RJV", 12990, 0, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Fila Flex Shine", 20200, 0, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Fila Renno", 19990, 0, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Fila Renno 90S", 19990, 0, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 
-(default, "Vans ERA", 17900, 1, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Vans Old Skool VLT LX", 17900, 1, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Vans Old Skool Supreme", 17900, 1, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Vans Old Skool", 18700, 1, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." )
+(default, "Vans ERA", 17900, 0, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Vans Old Skool VLT LX", 17900, 0, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Vans Old Skool Supreme", 17900, 0, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Vans Old Skool", 18700, 0, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." )
 ;
 
-ALTER TABLE jumpstore.products DROP FOREIGN KEY products_FK_1;
-ALTER TABLE jumpstore.products ADD CONSTRAINT products_FK_1 FOREIGN KEY (brandID) REFERENCES jumpstore.brands(ID) ON DELETE CASCADE ON UPDATE RESTRICT;
-ALTER TABLE jumpstore.products DROP FOREIGN KEY products_FK_2;
-ALTER TABLE jumpstore.products ADD CONSTRAINT products_FK_2 FOREIGN KEY (stockID) REFERENCES jumpstore.stocks(ID) ON DELETE CASCADE ON UPDATE RESTRICT;
+ALTER TABLE jumpstore.products DROP FOREIGN KEY products_FK;
+ALTER TABLE jumpstore.products ADD CONSTRAINT products_FK FOREIGN KEY (brandID) REFERENCES jumpstore.brands(ID) ON DELETE CASCADE ON UPDATE RESTRICT;
+
 
 
 
@@ -228,6 +186,3 @@ CREATE TABLE jumpstore.userProducts (
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_general_ci;
-
-
-

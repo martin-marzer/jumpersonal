@@ -29,10 +29,10 @@
                                 <div class="product-container">
                                     <a href="/sneakers/detail/<%= articulo.id %>" class="link-detail">
                                         <div class="product">
-                                            <% if (articulo.discounts.active == true) { %>
+                                            <% if (articulo.discount !== 0) { %>
                                                 <div class="sale">
                                                     <div class="discount">
-                                                        <%= articulo.discounts.discountPercent %>% OFF
+                                                        <%= articulo.discount %>% OFF
                                                     </div>
                                                 </div>
                                             <% } %>
@@ -46,8 +46,8 @@
                                                         <p><%= articulo.name %></p>
                                                     </div>
                                                     <div class="price">
-                                                        <% if (articulo.discounts.active == true) { %>
-                                                                <p>$<%= toThousand(articulo.price - (articulo.price * articulo.discounts.discountPercent / 100))%></p>
+                                                        <% if (articulo.discount !== 0) { %>
+                                                                <p>$<%= toThousand(articulo.price - (articulo.price * articulo.discount / 100))%></p>
                                                                 <p class="oldPrice">$<%= toThousand(articulo.price)%></p>
                                                         <% } else {%>
                                                             <p>$<%= toThousand(articulo.price) %></p>

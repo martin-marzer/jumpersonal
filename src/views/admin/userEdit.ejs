@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Editar producto</title>
+        <%- include("./partials/head") %>
+        <link rel='stylesheet' href='/css/userEdit.css'>
+    </head>
+<body>
+    <%- include("./partials/header") %>
+    <%- include("./partials/menuMobile") %>
+
+    <main class="container_main">
+        <div class="forms-container">
+
+            <form class="formulario-edit" method="POST" action="<%= usuario.id %>?_method=PUT">
+                <a href="/administrator/users">Volver</a>
+                <h1 class="titulo">Editando al/a señor/a: <%= usuario.username %></h1>
+
+                <div class="selects">
+
+                    <div >
+                        <label for="select">Categoria </label>
+                        <select id="select" name="rol" required>
+                            
+                            <option value="1"
+                            <% if (usuario.rol == 1) { %>
+                                selected
+                                <% } %>
+                            >Admin</option>
+    
+                            <option value="2"
+                            <% if (usuario.rol == 2) { %>
+                                selected
+                                <% } %>
+                            >Client</option>
+    
+    
+                        </select>
+                    </div>
+    
+                </div>
+    
+
+                <section class="wrapper">
+                    <button type="submit" class="add_edit_product">Guardar Datos</button>
+                    <button type="reset" class="add_edit_product">Borrar Datos</button>
+                </section>
+            </form>
+        </div>
+        
+
+    </main>
+    <%- include("./partials/scripts") %>
+    <script src="/js/edit-CreateProduct.js"></script>
+</body>
+</html>

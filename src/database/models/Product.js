@@ -26,11 +26,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false
         },
-        stockID: {
+        quantity: {
             type: dataTypes.BIGINT(10),
             allowNull: false
         },
-        discountID: {
+        discount: {
             type: dataTypes.BIGINT(10),
             allowNull: false
         },
@@ -53,17 +53,9 @@ module.exports = (sequelize, dataTypes) => {
             as: "images",
             foreignKey: "productsID"
         })
-        Product.belongsTo(models.Stock, {
-            as: "stocks",
-            foreignKey: "stockID"
-        })
         Product.belongsTo(models.Brand, {
             as: "brands",
             foreignKey: "brandID"
-        })
-        Product.belongsTo(models.Discount, {
-            as: "discounts",
-            foreignKey: "discountID"
         })
         Product.belongsToMany(models.Size, {
             as: "sizes",

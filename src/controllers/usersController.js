@@ -30,7 +30,7 @@ const controlador = {
             .then(user => {
                 req.session.userLogged = user;
 
-                return res.redirect("/");
+                res.redirect("/profile");
             })
             .catch(error => res.send(error))
         }

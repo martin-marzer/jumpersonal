@@ -143,8 +143,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     font-size: 17px;
 }
 .dropdown-content a:hover {
-    background-color: rgb(0, 0, 0);
-    color: rgb(243, 243, 243);
+    text-decoration: underline;
 }
 #jumpstore-menu-mobile, #jumpstore-right-menu {
     width: 20%;
@@ -251,7 +250,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* The side navigation menu */
 .sidenav {
-    height: 80vw;
+    height: 70vw;
     width: 100%;; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 999; /* Stay on top */
@@ -277,9 +276,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* The navigation menu links */
 .overlay-content .links a {
-    padding: 5% 2%;
+    padding: 4% 2%;
     text-decoration: none;
-    font-size: 5vw;
+    font-size: 4.5vw;
     display: block;
     transition: 0.5s;
     font-weight: 600;
@@ -441,17 +440,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     line-height: 11vw;
     color: #fff;
   }
-  .button-scroll:hover {
-    cursor: pointer;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 8px 0px rgb(0, 0, 0);
-  }
-  .button-scroll:hover i {
-    color: #000000;
-  }
-  .button-scroll:active {
-    background-color: rgb(0, 0, 0);
-  }
   .button-scroll.show {
     opacity: 1;
     visibility: visible;
@@ -461,6 +449,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 @media (max-width: 767px) {
     .container {
         width: 100% ! important;
+        max-width: 100%;
     }
 
     .form-search input:-webkit-autofill,
@@ -668,10 +657,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         bottom: 3vw;
         right: 3vw;
       }
-      .button-scroll i {
+    .button-scroll i {
         font-size: 3vw;
         line-height: 4vw;
-      }
+    }
+
+    .button-scroll:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px 0px rgb(0, 0, 0);
+    }
+    .button-scroll:hover i {
+    color: #000000;
+    }
+    .button-scroll:active {
+    background-color: rgb(0, 0, 0);
+    }
 }
 
 @media (min-width: 992px){

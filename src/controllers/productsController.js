@@ -16,7 +16,7 @@ const controlador = {
         let filterData =  req.params.FilterBy
 
         Products.findAll({
-            include: ['images', "stocks", "brands","discounts", "sizes"]
+            include: ['images', "brands", "sizes"]
         })
             .then(allProducts => {
 
@@ -27,7 +27,7 @@ const controlador = {
                 } else {
                     viewToRender = "ofertas"
                     allProducts = allProducts.filter(product => {
-                        if (product.discounts.discountPercent != 0) {
+                        if (product.discount != 0) {
                             return product
                         }
                     })
@@ -141,7 +141,7 @@ const controlador = {
                                 const precio = price[i];
                                 allProducts.filter(product => {
                                     
-                                    priceOFF = product.price - (product.price * product.discounts.discountPercent / 100)
+                                    priceOFF = product.price - (product.price * product.discount / 100)
                                     
                                     if (precio == "0$-19999$") {
                                                                
@@ -228,7 +228,7 @@ const controlador = {
     },
     productDetail: (req,res) => {
         Products.findByPk(req.params.id, {
-            include: ['images', "stocks", "brands","discounts", "sizes"]
+            include: ['images', "brands", "sizes"]
         })
         .then(product => {
             return res.render("detailProducts", {

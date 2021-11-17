@@ -12,12 +12,12 @@
     <%- include("./partials/menuMobile") %>
 
     <div class="encabezado_content">
-       <div class="titulo">Productos de Jumpstore</div>
+       <div class="titulo">Usuarios de Jumpstore</div>
        <div class="ubicacion_content">
            <ul>
                <li><a href="/administrator">Panel de administracion</a></li>
                <li>></li>
-               <li>Productos</li>
+               <li>Usuarios</li>
            </ul>
        </div>
     </div>
@@ -28,11 +28,8 @@
     <div class="conteiner_general">
         <div class="form_content">
             <ul class="form_ul">
-            <li class="titulo_form">Listado de productos: <%= articulos.length %> </li>
-            <li>
-                <a href="/productCreate" class="add_edit_product">Nuevo</a>
-            </li>
-        </ul>
+                <li class="titulo_form">Cantidad de usuarios: <%= usuarios.length %> </li>
+            </ul>
         </div>
     <div class="conteiner_general_list">
         <table class="table-sortable" cellspacing="0" cellpadding="20">
@@ -41,27 +38,33 @@
                 <th>Editar/Borrar</th>
                 <th style="    display: flex;
                 align-items: center;
-                width: 100%; justify-content: center;">Orden de carga<i class="fas fa-arrows-alt-v"></i></th>
-                <th>Nombre<i class="fas fa-arrows-alt-v"></i></th>
-                <th>Imagen</th>
-                <th>Precio<i class="fas fa-arrows-alt-v"></i></th>
+                width: 100%; justify-content: center;">ID<i class="fas fa-arrows-alt-v"></i></th>
+                <th>Nombre de Usuario<i class="fas fa-arrows-alt-v"></i></th>
+                <th>Email<i class="fas fa-arrows-alt-v"></i></th>
+                <th>Categoria<i class="fas fa-arrows-alt-v"></i></th>
               </tr>
             </thead>
             <tbody>
-                <% articulos.forEach(articulo => { %> 
-                <tr data-href="/sneakers/detail/<%= articulo.id %>">
-                    <td><li class="liEditar"><a href="/products/edit/<%= articulo.id %>" class="add_edit_product">Editar</a>
+                <% usuarios.forEach(usuario => { %> 
+                    <tr>
+                        <td><li class="liEditar"><a href="users/edit/<%= usuario.id %>" class="add_edit_product">Editar</a>
                         
                         </li>
                     </td>
-                    <td style="width: 10%;"><%= articulo.id %></td>
-                    <td><%= articulo.name %></td>
+                    <td style="width: 10%;"><%= usuario.id %></td>
+                    <td><%= usuario.username %></td>
                     <td>
-                         <img src="images/zapatillas/<%= articulo.images[0].url %>">
-                         <%# console.log(articulo.images[0]) %>  
+                        <%= usuario.email %>
                     </td>
-                    <td><%= articulo.price %></td>
-              </tr>
+                    <td>
+                        <% if (usuario.rol == 1) { %>
+                            admin
+                        <% } else { %>
+                            usuario
+                        <% } %>
+                    </td>
+                    </tr>
+
               <% }); %>
             </tbody>
           </table>

@@ -129,7 +129,7 @@ li {
 .image{
     transition: all 0.5s ease;
     border-radius: 2%;
-    height: 100%;
+    height: 98%;
 }
 .image:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -158,7 +158,8 @@ li {
 }
 .image__title{
     align-self: center;
-    height: 60px;
+    height: 50px;
+    font-size: 20px;
 }
 .image__description{
     font-size: 25px;
@@ -185,9 +186,6 @@ h1 {
     text-transform: uppercase;
 }
 
-h1:hover {
-    letter-spacing: 4px;
-}
 
 .brands {
     background: rgba(7, 7, 7, 0.1);
@@ -221,17 +219,15 @@ h1:hover {
     margin-bottom: 50px;
 }
 .splide .splide__slide {
-    margin: 0 5% !important;
-}
-.splide .splide__track {
-    height: 300px !important;
+    margin: 0 1% !important;
+    height: 20rem;
 }
 
 
 .container-splide img {
     width: 100%;
     margin: 0 auto;
-    height: 35%;
+    height: 50%;
     object-fit: cover;
 }
 
@@ -310,6 +306,13 @@ h1:hover {
 }
 
 @media (min-width: 768px){
+    body {
+        background-color: #ffffff;
+    }
+    
+    .splide .splide__slide {
+        height: 25rem;
+    }
 
     .splideHome .splide__slide{
         height: 400px !important;

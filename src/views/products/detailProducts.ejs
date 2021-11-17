@@ -65,8 +65,8 @@
                                     <h1><%= articuloID.name %></h1>
                                 </div>
                                 <div class="product-price">
-                                    <% if (articuloID.discounts.active == true) { %>
-                                        <p>$<%= toThousand(articuloID.price - (articuloID.price * articuloID.discounts.discountPercent / 100)) %></p>
+                                    <% if (articuloID.discount != 0) { %>
+                                        <p>$<%= toThousand(articuloID.price - (articuloID.price * articuloID.discount / 100)) %></p>
                                         <p class="oldPrice">$<%= toThousand(articuloID.price)%></p>
                                     <% } else {%>
                                         <p>$<%= toThousand(articuloID.price) %></p>

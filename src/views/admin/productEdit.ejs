@@ -1,100 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Editar producto</title>
-        <%- include("./partials/head") %>
-        <link rel='stylesheet' href='/css/productEdit.css'>
-    </head>
+
+<head>
+    <title>Editar producto</title>
+    <%- include("./partials/head") %>
+    <link rel='stylesheet' href='/css/productEdit.css'>
+</head>
+
 <body>
     <%- include("./partials/header") %>
     <%- include("./partials/menuMobile") %>
 
     <main class="container_main">
         <div class="forms-container">
-            <form id="delete-form" method="POST" action="/products/delete/<%= articulo.id %>?_method=DELETE">
-                <button type="submit" id="delete_product" class="add_edit_product">Borrar Producto</button>
-            </form>
-
-            <form class="formulario-edit" method="POST" action="/products/edit/<%= articulo.id %>?_method=PUT">
-                <a href="/administratorToolsProducts">Volver</a>
+            <form class="formulario-edit" method="POST" action="/administrator/products/edit/<%= articulo.id %>?_method=PUT">
+                <a href="/administrator/products">Volver</a>
                 <h1 class="titulo">Editando <%= articulo.name %></h1>
                 <div>
-                    <input class="formulario-input" type="text" name="name" class="cambiar-producto" value="<%= articulo.name %>" placeholder="Nuevo nombre" required>
+                    <input class="formulario-input" type="text" name="name" class="cambiar-producto"
+                    value="<%= locals.oldData ? oldData.name : articulo.name %>" placeholder="Nuevo nombre">
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                            <%= errors.name.msg %>
+                        </div>
+                        <% } %>   
                 </div>
-    
+
                 <div>
                     <label for="fecha">Fecha de entrada:</label>
                     <% let inputDate = articulo.createdAt.toISOString().split('T')[0];  %>
-                    <input class="formulario-input" type="date" name="fechaEntrada" id="fecha" class="cambiar-producto" value="<%= inputDate %>"  min="2021-01-01" max="2022-01-01" required>
+                    <input class="formulario-input" type="date" name="fechaEntrada" id="fecha" class="cambiar-producto"
+                    value="<%= locals.oldData ? oldData.fechaEntrada : inputDate %>" min="2021-01-01" max="2022-01-01">
+
+                    <% if (locals.errors && errors.fechaEntrada) { %>
+                        <div class="text-danger">
+                            <%= errors.fechaEntrada.msg %>
+                        </div>
+                        <% } %>
                 </div>
-    
+
                 <div class="selects">
                     <div class="talles">
-                        <select id="select-talles" name="talle" required>
-                            <option value="1"
-                            <% if (articulo.sizes[0].name == "35-40") { %>
-                                selected
-                                <% } %>
-                            >35-40</option>
-                            <option value="2"
-                            <% if (articulo.sizes[0].name == "40-45") { %>
-                                selected
-                                <% } %>
-                            >40-45</option>
+                        <select id="select-talles" name="talle">
+                            <option value="1" <% if (articulo.sizes[0].name == "35-40") { %> selected <% } %>>35-40
+                            </option>
+                            <option value="2" <% if (articulo.sizes[0].name == "40-45") { %> selected <% } %>>40-45
+                            </option>
                         </select>
                     </div>
                     <div class="marcas">
-                        <select id="select-marcas" name="marca" required>
-                            
-                            <option value="1"
-                            <% if (articulo.brands.name == "adidas") { %>
-                                selected
-                                <% } %>
-                            >Adidas</option>
-    
-                            <option value="2"
-                            <% if (articulo.brands.name == "fila") { %>
-                                selected
-                                <% } %>
-                            >Fila</option>
-    
-                            <option value="3"
-                            <% if (articulo.brands.name == "nike") { %>
-                                selected
-                                <% } %>
-                            >Nike</option>
-    
-                            <option value="4"
-                            <% if (articulo.brands.name == "vans") { %>
-                                selected
-                                <% } %>
-                            >Vans</option>
-    
+                        <select id="select-marcas" name="marca">
+
+                            <option value="1" <% if (articulo.brands.name == "adidas") { %> selected <% } %>>Adidas
+                            </option>
+
+                            <option value="2" <% if (articulo.brands.name == "fila") { %> selected <% } %>>Fila</option>
+
+                            <option value="3" <% if (articulo.brands.name == "nike") { %> selected <% } %>>Nike</option>
+
+                            <option value="4" <% if (articulo.brands.name == "vans") { %> selected <% } %>>Vans</option>
+
                         </select>
                     </div>
-    
+
                 </div>
-    
+
                 <div class="selects">
-                    <input class="formulario-input price-discount" min="0" step="1000" type="number" name="precio" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
-                    <input class="formulario-input price-discount" type="number"  min="0" max="100" value="<%= articulo.discount %>" name="descuento" class="crear-producto" placeholder="Descuento" required>
+
+                    <div class="price-discount-stock">
+                        <label for="precio"> Precio</label>
+                        <input class="formulario-input input-price-discount-stock" min="0" step="1000"
+                            name="precio" value="<%= locals.oldData ? oldData.precio : articulo.price %>" class="crear-producto">
+                        <% if (locals.errors && errors.precio) { %>
+                            <div class="text-danger">
+                                <%= errors.precio.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="price-discount-stock">
+                        <label for="precio"> Descuento</label>
+                        <input class="formulario-input input-price-discount-stock" min="0" max="100"
+                            name="descuento" value="<%= locals.oldData ? oldData.precio : articulo.discount %>" class="crear-producto">
+                        <% if (locals.errors && errors.descuento) { %>
+                            <div class="text-danger">
+                                <%= errors.descuento.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="price-discount-stock">
+                        <label for="precio"> Stock</label>
+                        <input class="formulario-input input-price-discount-stock" min="1" max="100"
+                            name="stock" value="<%= locals.oldData ? oldData.precio : articulo.quantity %>" class="crear-producto">
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="text-danger">
+                                <%= errors.stock.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+
+
+
                 </div>
-    
+
                 <div class="col-12">
                     <label for="description" class="form-label">Descripción:</label>
-                    <textarea name="descripcion" id="description" class="descripcion" required ><%= articulo.description %></textarea>
+                    <textarea name="descripcion" id="description" class="descripcion"
+                    ><%= locals.oldData ? oldData.descripcion : articulo.description %></textarea>
+                    <% if (locals.errors && errors.descripcion) { %>
+                        <div class="text-danger">
+                            <%= errors.descripcion.msg %>
+                        </div>
+                        <% } %>
                 </div>
-    
+
                 <section class="wrapper">
                     <button type="submit" class="add_edit_product">Guardar Datos</button>
-                    <button type="reset" class="add_edit_product">Borrar Datos</button>
+                    <button type="button" id="delete-button" class="add_edit_product">Borrar Datos</button>
+                    <button type="submit" formaction="/products/delete/<%= articulo.id %>?_method=DELETE"
+                        id="delete_product" class="add_edit_product">Borrar Producto</button>
                 </section>
             </form>
         </div>
-        
+
 
     </main>
     <%- include("./partials/scripts") %>
     <script src="/js/edit-CreateProduct.js"></script>
 </body>
+
 </html>

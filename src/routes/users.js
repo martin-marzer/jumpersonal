@@ -65,13 +65,13 @@ const validationsLogin = [
 
 router.get("/register", guestMiddleware, usersController.register);
 
-router.post("/register", validationsRegister, usersController.processRegister);
+router.post("/register", guestMiddleware, validationsRegister, usersController.processRegister);
 
 router.get("/login", guestMiddleware, usersController.login);
 
-router.post("/login", validationsLogin, usersController.loginProcess);
+router.post("/login", guestMiddleware, validationsLogin, usersController.loginProcess);
 
-router.get('/logout', usersController.logout);
+router.get('/logout', authMiddleware, usersController.logout);
 
 router.get("/profile", authMiddleware, usersController.profile);
 

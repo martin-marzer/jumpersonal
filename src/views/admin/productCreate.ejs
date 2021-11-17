@@ -1,65 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Añadir nuevo producto</title>
-        <%- include("./partials/head") %>
-        <link rel="stylesheet" href="/css/productCreate.css">
-    </head>
+
+<head>
+    <title>Añadir nuevo producto</title>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="/css/productCreate.css">
+</head>
+
 <body>
     <%- include("./partials/header") %>
     <%- include("./partials/menuMobile") %>
     <main>
-        <form class="formulario-register" method="POST" action="/administratorToolsProducts" enctype="multipart/form-data">
-            <a href="/administratorToolsProducts">Volver</a>
-            <h1 class="titulo">Añadir producto</h1> 
-            <div>
-                <input class="formulario-input" type="text" name="name" class="crear-producto" placeholder="Nombre del producto" required>
+        <form class="formulario-register" method="POST" action="/administrator/products/create"
+            enctype="multipart/form-data">
+            <a href="/administrator/products">Volver</a>
+            <h1 class="titulo">Añadir producto</h1>
+
+            <% if (locals.oldData) { %>
+            <%# console.log(oldData) %>
+            <%# console.log(errors) %>
+            <% } %>
+
+            <div class="input-container">
+                <input class="formulario-input" type="text" name="name" class="crear-producto"
+                    placeholder="Nombre del producto" value="<%= locals.oldData ? oldData.name : null %>">
+                <% if (locals.errors && errors.name) { %>
+                <div class="text-danger">
+                    <%= errors.name.msg %>
+                </div>
+                <% } %>
             </div>
-            <div>
+
+            <div class="input-container">
                 <label for="fecha">Fecha de entrada:</label>
-                <input class="formulario-input" type="date" name="fechaEntrada" id="fechaValue" class="cambiar-producto"  min="2021-01-01" max="2022-01-01" required>
+                <input class="formulario-input" type="date" name="fechaEntrada" id="fechaValue" class="cambiar-producto"
+                    min="2021-01-01" max="2022-01-01" value="<%= locals.oldData ? oldData.fechaEntrada : null %>">
+                    <% if (locals.errors && errors.fechaEntrada) { %>
+                        <div class="text-danger">
+                            <%= errors.fechaEntrada.msg %>
+                        </div>
+                        <% } %>
             </div>
-            <div class="selects">
+            <div class="selects input-container">
                 <div class="talles">
-                    <select id="select-talles" name="talle" required>
-                        <option value="" selected disabled>Selecciona talle</option>
-                        <option value="1">35-40</option>>
-                        <option value="2">40-45</option>   
+                    <select id="select-talles" name="talle">
+                        <option <%= !locals.oldData || oldData.talle == undefined  ? "selected" : ""; %> value=""
+                            disabled>Selecciona talle</option>
+                        <option <%= locals.oldData && oldData.talle == 1 ? "selected" : ""; %> value="1">35-40</option>>
+                        <option <%= locals.oldData && oldData.talle == 2 ? "selected" : ""; %> value="2">40-45</option>
                     </select>
+                    <% if (locals.errors && errors.talle) { %>
+                    <div class="text-danger">
+                        <%= errors.talle.msg %>
+                    </div>
+                    <% } %>
                 </div>
                 <div class="marcas">
-                    <select id="select-marcas" name="marca" required>
-                        <option value="" selected disabled>Selecciona marca</option>
-                        <option value="1" >Adidas</option>
-                        <option value="2">Fila</option>
-                        <option value="3" >Nike</option>
-                        <option value="4">Vans</option>
+                    <select id="select-marcas" name="marca">
+                        <option <%= !locals.oldData || oldData.marca == undefined ?  "selected" : ""; %> value=""
+                            disabled>Selecciona marca</option>
+                        <option <%= locals.oldData && oldData.marca == 1 ? "selected" : ""; %> value="1">Adidas</option>
+                        <option <%= locals.oldData && oldData.marca == 2 ? "selected" : ""; %> value="2">Fila</option>
+                        <option <%= locals.oldData && oldData.marca == 3 ? "selected" : ""; %> value="3">Nike</option>
+                        <option <%= locals.oldData && oldData.marca == 4 ? "selected" : ""; %> value="4">Vans</option>
                     </select>
+                    <% if (locals.errors && errors.marca) { %>
+                    <div class="text-danger">
+                        <%= errors.marca.msg %>
+                    </div>
+                    <% } %>
                 </div>
 
             </div>
-            <div class="selects">
-                    <input class="formulario-input price-discount" type="number"  min="0" step="1000" name="precio" class="crear-producto" placeholder="Precio" required>
-                    <input class="formulario-input price-discount" type="number"  min="0" max="100"  name="descuento" class="crear-producto" placeholder="Descuento" required>
+            <div class="selects input-container">
+                <div class="price-discount-stock">
+                    <label for="precio"> Precio</label>
+                    <input class="formulario-input input-price-discount-stock" min="0" step="1000" name="precio"
+                        value="<%= locals.oldData ? oldData.precio : null %>" class="crear-producto">
+                    <% if (locals.errors && errors.precio) { %>
+                    <div class="text-danger">
+                        <%= errors.precio.msg %>
+                    </div>
+                    <% } %>
+                </div>
+                <div class="price-discount-stock">
+                    <label for="precio"> Descuento</label>
+                    <input class="formulario-input input-price-discount-stock" min="0" max="100" name="descuento"
+                        value="<%= locals.oldData ? oldData.descuento : null %>" class="crear-producto">
+                    <% if (locals.errors && errors.descuento) { %>
+                    <div class="text-danger">
+                        <%= errors.descuento.msg %>
+                    </div>
+                    <% } %>
+                </div>
+                <div class="price-discount-stock">
+                    <label for="precio"> Stock</label>
+                    <input class="formulario-input input-price-discount-stock" min="1" max="100" name="stock"
+                        value="<%= locals.oldData ? oldData.stock : null %>" class="crear-producto">
+                    <% if (locals.errors && errors.stock) { %>
+                    <div class="text-danger">
+                        <%= errors.stock.msg %>
+                    </div>
+                    <% } %>
+                </div>
+
             </div>
 
-
-            <div class="file-upload">
-                <input class="file-upload__input" type="file" for="myFile" name="myFile" id="myFile" required multiple>
-                <button class="file-upload__button" type="button">Imagenes del producto (solo 3)</button>
-                <span class="file-upload__label"></span>
+            <div class="input-container">
+                <div class="file-upload">
+                    <input class="file-upload__input" type="file" for="myFile" name="myFile" id="myFile" multiple>
+                    <button class="file-upload__button" type="button">Imagenes del producto</button>
+                    <span class="file-upload__label"></span>
+                </div>
+                <% if (locals.imgERROR) { %>
+                <div class="text-danger">
+                    <%= imgERROR%>
+                </div>
+                <% } %>
             </div>
-            <div class="col-12">
+
+            <div class="col-12 input-container">
                 <label for="description" class="form-label">Descripción:</label>
-                <textarea name="descripcion" id="description" class="form-input" placeholder="Aquí coloca una descripcion del producto" required></textarea>
+                <textarea name="descripcion" id="description" class="form-input"
+                    placeholder="Aquí coloca una descripcion del producto"><%= locals.oldData ? oldData.descripcion : null %></textarea>
+                <% if (locals.errors && errors.descripcion) { %>
+                <div class="text-danger">
+                    <%= errors.descripcion.msg %>
+                </div>
+                <% } %>
             </div>
             <section class="wrapper">
                 <button type="submit" class="add_edit_product">Enviar</button>
-                <button type="reset" class="add_edit_product">Borrar</button>
+                <button type="button" id="delete-button" class="add_edit_product">Borrar</button>
             </section>
         </form>
     </main>
     <%- include("./partials/scripts") %>
     <script src="/js/edit-CreateProduct.js"></script>
 </body>
+
 </html>

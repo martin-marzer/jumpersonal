@@ -1,0 +1,100 @@
+body {
+    background-color: #f6f6f6b8;
+    background-image: url(../images/administrador/sitio-web-oficial-de-nike.jpg);
+
+}
+
+.forms-container {
+    padding: 50px 4%;
+    position: relative;
+}
+
+.formulario-edit{
+    padding: 20px 8%;
+    border-radius: 2%;
+    box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
+    background: #b7c6dfed;
+}
+
+
+.container_main div {
+    width: 100%;
+}
+.selects {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+}
+#select {
+    width: 100%;
+    height:45px;
+    background: whitesmoke;
+    border: none;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+.container_main div label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.formulario-input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 30px;
+    border: 0.5px #0000007a solid;
+    background: whitesmoke;
+    border: none;
+    border-radius: 10px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+.add_edit_product{
+    border: 1px solid #2e518b;
+    padding: 6px;
+    background-color: black;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Helvetica', sans-serif;
+    border-radius: 50px;
+    font-size: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+    width: 30%;
+}
+
+     
+.add_edit_product:hover{
+    background: rgba(0, 0, 0, 0.637);
+}
+
+.titulo{
+    text-align: center;
+    font-size: 20px;
+}
+
+
+
+  
+
+
+@media (min-width: 768px) {
+
+    .forms-container {
+        padding: 50px 30%;
+    }
+    .titulo{
+        font-size: 28px;
+    }
+    .add_edit_product {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+

@@ -46,7 +46,7 @@ const controlador = {
 		//aca se guardan los datos que coinciden con la busqueda
 
 		Products.findAll({
-			include: ['images', "stocks", "brands","discounts", "sizes"],
+			include: ['images', "brands", "sizes"],
 			where: searchs,
 			limit: limited
 		})

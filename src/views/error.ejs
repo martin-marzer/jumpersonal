@@ -33,9 +33,14 @@
 	</style>
 </head>
 <body>
+	<a href="" id="return">Volver</a>
 	<h1><%= message %></h1>
 	<h2><%= error.status %></h2>
 	<p>Error trying to access to: <b><%= path %></b></p>
 	<pre><i><%= error.stack %></i></pre>
+	<script>
+		link = document.querySelector("#return")
+		link.href = document.referrer
+	</script>
 </body>
 </html>
